@@ -1,0 +1,179 @@
+/* columns-impact — Medtronic "Our Impact" promo panels.
+   Two instances share this block:
+   1) magenta -> purple gradient statement panel (no image column)
+   2) deep-navy impact-report card with photo (has .columns-impact-img-col)
+   Values extracted from source .our-impact-card and .access-card. */
+
+.columns-impact > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-impact img {
+  display: block;
+  width: 100%;
+}
+
+/* ---- shared text content ---- */
+.columns-impact .columns-impact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-impact-eyebrow {
+  position: relative;
+  margin: 0 0 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.columns-impact-eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 192px;
+  height: 1px;
+  background: rgb(255 255 255 / 35%);
+}
+
+.columns-impact-headline {
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.columns-impact-copy {
+  margin: 16px 0 0;
+  color: #fff;
+}
+
+.columns-impact-cta {
+  margin: 28px 0 0;
+}
+
+.columns-impact-cta a,
+.columns-impact-cta a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-decoration: none;
+  white-space: normal;
+}
+
+/* circular arrow badge (matches source .arrow-icon svg) */
+.columns-impact-cta a::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><g fill="%234A7DFF" stroke="white" stroke-width="1.5" stroke-linejoin="round" stroke-miterlimit="10"><circle cx="16" cy="16" r="15.12"/><path d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"/></g></svg>') center / contain no-repeat;
+}
+
+/* ================= Magenta statement panel (no image column) ================= */
+.columns-impact:not(:has(.columns-impact-img-col)) > div {
+  padding: 40px 28px;
+  background-color: #ac0460;
+  background-image: linear-gradient(105deg, rgb(218 8 123 / 0%) 0%, #ac0460 51.75%, #9747ff 99.51%);
+}
+
+/* Navy impact-report card base (kept beside the magenta base for cascade order) */
+.columns-impact:has(.columns-impact-img-col) > div {
+  overflow: hidden;
+  background: var(--brand-navy); /* rgb(23 15 95) */
+}
+
+/* the authored empty second cell */
+.columns-impact > div > div:empty {
+  display: none;
+}
+
+.columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-content {
+  flex: 1;
+}
+
+.columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-headline {
+  margin: 32px 0;
+  font-size: var(--heading-font-size-xxl); /* 40px mobile / 52px desktop */
+}
+
+.columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-copy {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+/* ================= Navy impact-report card (has image column) ================= */
+.columns-impact:has(.columns-impact-img-col) .columns-impact-img-col {
+  padding: 0;
+}
+
+.columns-impact:has(.columns-impact-img-col) .columns-impact-content {
+  padding: 24px 30px 36px;
+}
+
+.columns-impact:has(.columns-impact-img-col) .columns-impact-headline {
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+.columns-impact:has(.columns-impact-img-col) .columns-impact-copy {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.columns-impact:has(.columns-impact-img-col) .columns-impact-cta a,
+.columns-impact:has(.columns-impact-img-col) .columns-impact-cta a.button:any-link {
+  color: #4a7dff;
+}
+
+/* ================= Desktop ================= */
+@media (width >= 900px) {
+  .columns-impact:not(:has(.columns-impact-img-col)) > div {
+    min-height: 498px;
+    padding: 53px 78px;
+    justify-content: space-between;
+  }
+
+  .columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-cta {
+    margin-top: auto;
+  }
+
+  .columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-copy {
+    max-width: 525px;
+  }
+
+  /* report card becomes a horizontal photo + navy panel */
+  .columns-impact:has(.columns-impact-img-col) > div {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .columns-impact:has(.columns-impact-img-col) .columns-impact-img-col {
+    flex: 0 0 42%;
+  }
+
+  .columns-impact:has(.columns-impact-img-col) .columns-impact-img-col img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .columns-impact:has(.columns-impact-img-col) .columns-impact-content {
+    flex: 1;
+    padding: 48px 48px 48px 44px;
+    justify-content: center;
+  }
+}

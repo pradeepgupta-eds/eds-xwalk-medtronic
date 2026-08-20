@@ -1,6 +1,7 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: #fff;
+  border-bottom: 1px solid rgb(0 0 0 / 8%);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -39,7 +40,7 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
+    max-width: var(--content-max-width);
     padding: 0 32px;
   }
 
@@ -142,7 +143,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: auto;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
@@ -151,6 +152,16 @@ header .nav-brand {
 header nav .nav-brand img {
   width: 128px;
   height: auto;
+}
+
+header nav .nav-brand a:any-link,
+header nav .nav-brand p {
+  color: var(--brand-navy);
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
 /* sections */
@@ -174,7 +185,12 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
+  color: var(--brand-navy);
   font-weight: 500;
+}
+
+header nav .nav-sections a:any-link {
+  color: var(--brand-navy);
 }
 
 header nav .nav-sections ul > li > ul {
@@ -269,4 +285,26 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* Tools row — Education / country / Contact links in navy */
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-tools ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+}
+
+header nav .nav-tools a:any-link {
+  color: var(--brand-navy);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+header nav .nav-tools a:any-link:hover {
+  text-decoration: underline;
 }

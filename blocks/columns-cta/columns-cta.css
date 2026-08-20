@@ -1,0 +1,117 @@
+/*
+ * columns-cta — dark full-width call-to-action banner.
+ * Values extracted from source div.wrapper-cta-banner (see migration-work/columns-cta-extracted.css).
+ * The enclosing .section.dark supplies the dark background (#00001c) and white text.
+ */
+
+/* Mobile-first: stack text then action. */
+.columns-cta.block > .columns-cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.columns-cta.block .columns-cta-text {
+  min-width: 0;
+}
+
+/* Eyebrow: first paragraph of the text cell. */
+.columns-cta.block .columns-cta-eyebrow {
+  margin: 0;
+  color: rgb(255 255 255 / 70%);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: 1.29px;
+  text-transform: uppercase;
+}
+
+/* Underline beneath the eyebrow. */
+.columns-cta.block .columns-cta-eyebrow::after {
+  content: "";
+  display: block;
+  width: 170px;
+  max-width: 60%;
+  margin-top: 21px;
+  border-bottom: 1px solid rgb(255 255 255 / 35%);
+}
+
+/* Headline: authored as a plain paragraph in the source, styled like a heading. */
+.columns-cta.block .columns-cta-headline {
+  margin: 32px 0 0;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 41.6px;
+}
+
+/* Copy paragraph. */
+.columns-cta.block .columns-cta-copy {
+  margin: 8px 0 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+/* Action cell hugs its content. */
+.columns-cta.block .columns-cta-action {
+  margin: 0;
+}
+
+.columns-cta.block .columns-cta-action p {
+  margin: 0;
+}
+
+/* "Find out" CTA — override the global plain-link reset with the
+   Medtronic blue arrowed-link treatment. */
+main .columns-cta.block .columns-cta-action a:any-link,
+main .columns-cta.block .columns-cta-action a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgb(74 125 255);
+  font-size: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+main .columns-cta.block .columns-cta-action a:any-link:hover {
+  color: rgb(74 125 255);
+  text-decoration: none;
+}
+
+/* Circular blue arrow icon after the link label. */
+.columns-cta.block .columns-cta-action a:any-link::after {
+  content: "";
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  background-color: rgb(74 125 255);
+  border-radius: 50%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+/* Desktop: text left, action right, vertically centred. */
+@media (width >= 900px) {
+  .columns-cta.block > .columns-cta-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .columns-cta.block .columns-cta-text {
+    flex: 1 1 auto;
+  }
+
+  .columns-cta.block .columns-cta-action {
+    flex: 0 0 auto;
+  }
+}

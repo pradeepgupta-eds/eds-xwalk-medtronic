@@ -1,20 +1,74 @@
 footer {
-  background-color: var(--light-color);
+  background-color: var(--brand-dark);
+  color: #fff;
   font-size: var(--body-font-size-xs);
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   padding: 40px 24px 24px;
 }
 
 footer .footer p {
-  margin: 0;
+  margin: 0 0 8px;
+}
+
+/* Link columns */
+footer .footer ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+footer .footer li {
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+footer .footer a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer a:any-link:hover {
+  text-decoration: underline;
+}
+
+/* Brand / tagline block */
+footer .footer > div:nth-child(2) p:first-child strong {
+  font-family: var(--heading-font-family);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+footer .footer > div:nth-child(2) p:nth-child(2) {
+  margin-bottom: 20px;
+  color: rgb(255 255 255 / 80%);
+}
+
+/* Address / legal block */
+footer .footer > div:last-child {
+  border-top: 1px solid rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 70%);
+  font-size: 13px;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 48px 32px 24px;
+  }
+
+  /* First two divs render as multi-column link/brand rows */
+  footer .footer > div:first-child,
+  footer .footer > div:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  footer .footer > div:first-child ul,
+  footer .footer > div:nth-child(2) ul {
+    flex: 1 1 180px;
   }
 }
