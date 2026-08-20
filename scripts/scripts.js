@@ -156,6 +156,7 @@ function buildDynamicMediaImages(main) {
   });
 }
 
+// eslint-disable-next-line no-underscore-dangle
 window.__dmRender__ = (src, alt) => {
   const family = detectDynamicMediaUrl(src);
   if (!family) return null;
