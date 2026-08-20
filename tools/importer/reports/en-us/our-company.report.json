@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.medtronic.com/en-us/our-company.html",
+  "path": "en-us/our-company",
+  "timestamp": "2026-08-20T15:45:07.736Z",
+  "title": "Where Health Meets High Tech | Medtronic",
+  "template": "our-company",
+  "blocks": [
+    "hero-stats",
+    "columns-promo-card",
+    "columns-promo-card",
+    "cards-topic",
+    "cards-tiles",
+    "cards-articles"
+  ]
+}
