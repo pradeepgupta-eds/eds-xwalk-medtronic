@@ -19,7 +19,25 @@
     ]
   },
   {
+    "id": "cards-articles",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "cards-stats",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-tiles",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-topic",
     "components": [
       "card"
     ]
@@ -53,6 +71,21 @@
   },
   {
     "id": "columns-impact",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "columns-promo-card",
     "components": [
       "column"
     ]
