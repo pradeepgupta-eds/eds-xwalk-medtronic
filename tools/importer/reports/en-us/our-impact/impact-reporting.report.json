@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.medtronic.com/en-us/our-impact/impact-reporting.html",
+  "path": "en-us/our-impact/impact-reporting",
+  "timestamp": "2026-08-20T19:06:35.472Z",
+  "title": "Leading with purpose | Medtronic",
+  "template": "impact-reporting",
+  "blocks": [
+    "hero-banner",
+    "cards-stats",
+    "cards-awards",
+    "columns-promo-card",
+    "accordion-links",
+    "cards-articles"
+  ]
+}

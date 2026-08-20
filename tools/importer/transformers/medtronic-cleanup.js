@@ -32,6 +32,18 @@ export default function transform(hookName, element, payload) {
     // Hidden xfpage experience-fragment duplicates (verified: div.xfpage appears 39x -
     // hidden contact-us form fragments and their nested hidden survey/options tables).
     WebImporter.DOMUtils.remove(element, ['div.xfpage']);
+
+    // Specialty/section quicklinks sub-nav (mega-menu of every specialty/therapy).
+    // On specialty pages this `#subnav-*` / `.quicklinks-*` block lists hundreds of
+    // therapies-procedures links — it is site navigation chrome, not page body
+    // content, and must be removed so it doesn't leak into the hero/section blocks.
+    WebImporter.DOMUtils.remove(element, [
+      '[id^="subnav-"]',
+      '.quicklinks',
+      '.quicklinks-subnav',
+      '.mdt-subnav',
+      '.subnav',
+    ]);
   }
 
   if (hookName === TransformHook.afterTransform) {

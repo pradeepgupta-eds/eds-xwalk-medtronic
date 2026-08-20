@@ -1,0 +1,91 @@
+/* Block: accordion-links -- Medtronic "Impact reporting" ESG disclosures.
+ * Expandable panels (title button + body), where each body is a list of
+ * resource / PDF download links. Solid-panel styling (acc-solid in the source).
+ * Contrast with a plain FAQ accordion: the bodies here are link lists. */
+
+.accordion-links details {
+  border: 1px solid #dadada;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.accordion-links details + details {
+  margin-top: 16px;
+}
+
+.accordion-links details p {
+  margin-bottom: 0.8em;
+}
+
+.accordion-links details summary {
+  position: relative;
+  padding: 18px 46px 18px 20px;
+  cursor: pointer;
+  list-style: none;
+  overflow: auto;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-navy, rgb(23 15 95));
+  transition: background-color 0.2s;
+}
+
+.accordion-links details[open] summary {
+  background-color: var(--light-color, rgb(245 245 245));
+}
+
+.accordion-links details summary:focus,
+.accordion-links details summary:hover {
+  background-color: var(--light-color, rgb(245 245 245));
+}
+
+.accordion-links details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-links details summary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%) rotate(135deg);
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--brand-navy, rgb(23 15 95));
+  border-width: 2px 2px 0 0;
+  transition: transform 0.2s;
+}
+
+.accordion-links details[open] summary::after {
+  transform: translateY(-75%) rotate(-45deg);
+}
+
+.accordion-links details .accordion-links-item-body {
+  padding: 8px 20px 20px;
+}
+
+.accordion-links details:not([open]) .accordion-links-item-body {
+  display: none;
+}
+
+.accordion-links details[open] .accordion-links-item-body {
+  border-top: 1px solid #dadada;
+  background-color: #fff;
+}
+
+/* Resource link lists inside a panel */
+.accordion-links .accordion-links-item-body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-links .accordion-links-item-body a:any-link {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--brand-navy, rgb(23 15 95));
+  text-decoration: none;
+}
+
+.accordion-links .accordion-links-item-body a:any-link:hover,
+.accordion-links .accordion-links-item-body a:any-link:focus {
+  text-decoration: underline;
+}

@@ -1,0 +1,68 @@
+/* Block: cards-awards -- Medtronic "Impact reporting" recognition cards.
+ * A row of uniform bordered white cards, each with a centered award logo image,
+ * a bold title (linked externally) and a short description. Contrast with
+ * cards-topic (photo teasers), cards-tiles (blue icon-link panels) and
+ * cards-stats (icon + figure + label). */
+
+.cards-awards > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 24px;
+}
+
+.cards-awards > ul > li {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  padding: 24px;
+}
+
+/* Centered award logo */
+.cards-awards .cards-awards-card-image {
+  line-height: 0;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.cards-awards .cards-awards-card-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.cards-awards .cards-awards-card-body {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1a1a24;
+}
+
+/* Bold title (usually a link) */
+.cards-awards .cards-awards-card-body h4,
+.cards-awards .cards-awards-card-body strong {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.cards-awards .cards-awards-card-body a:any-link {
+  color: var(--brand-navy, rgb(23 15 95));
+  text-decoration: none;
+}
+
+.cards-awards .cards-awards-card-body a:any-link:hover,
+.cards-awards .cards-awards-card-body a:any-link:focus {
+  text-decoration: underline;
+}
+
+.cards-awards .cards-awards-card-body p {
+  margin: 0 0 8px;
+  color: #5a5a6e;
+}

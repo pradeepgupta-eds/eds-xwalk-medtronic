@@ -1,0 +1,42 @@
+{
+  "variantName": "columns-video",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals/specialties/acute-care-monitoring.html",
+    "originPage": "Acute Care & Monitoring specialty detail page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "media",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "two-column band: media column (Scene7/Dynamic Media looping video or image) beside a supporting text paragraph; no heading, no CTA, no stats",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "media-beside-text bands (video or image on one side, supporting copy on the other)",
+      "light-panel introductory video sections",
+      "two-column explainer bands pairing a player with a short statement"
+    ],
+    "notSuitableFor": [
+      "dark split sections with a statistics strip (use columns-stats)",
+      "vivid gradient two-panel promos (use columns-impact)",
+      "dark single-CTA banners (use columns-cta)",
+      "image + heading + single Learn more promo cards (use columns-promo-card)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T18:45:00.000Z"
+  }
+}

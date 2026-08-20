@@ -31,8 +31,12 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["/en-us/our-company"],
-    "reuseCount": 1,
-    "lastUsed": "2026-08-20T00:00:00.000Z"
+    "pagesUsing": [
+      "/en-us/our-company",
+      "/en-us/our-impact",
+      "/en-us/our-impact/impact-reporting"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-08-20T18:18:00.000Z"
   }
 }

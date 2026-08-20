@@ -1,0 +1,115 @@
+/* Block: hero-banner -- Medtronic "Impact reporting" hero.
+ * A FULL-BLEED photographic hero: a background image fills the band edge to
+ * edge, with a left-aligned translucent white panel holding the eyebrow,
+ * headline, supporting line and a single download CTA. Contrast with
+ * hero-video (centered white card + video), hero-stats (dark full-bleed +
+ * stats strip) and hero-impact (light two-column text-beside-media + stats). */
+
+/* ---- Full-bleed band ---- */
+.hero-banner-container .hero-banner-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-banner {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  padding: 32px 24px;
+  overflow: hidden;
+}
+
+/* Inner grid wrapper (the block's single row) */
+.hero-banner > div {
+  position: static;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- Background media (full-bleed) ---- */
+.hero-banner .hero-banner-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+}
+
+.hero-banner .hero-banner-media picture,
+.hero-banner .hero-banner-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Overlay text panel (left aligned, translucent white) ---- */
+.hero-banner .hero-banner-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  max-width: 520px;
+  padding: 28px 32px;
+  background-color: rgb(255 255 255 / 82%);
+  color: #1a1a24;
+}
+
+.hero-banner .hero-banner-content h1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  line-height: 1.1;
+  color: var(--brand-navy, rgb(23 15 95));
+}
+
+.hero-banner .hero-banner-content p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Eyebrow: first short paragraph above the headline */
+.hero-banner .hero-banner-content > p:first-child {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-navy, rgb(23 15 95));
+}
+
+/* Download / resource CTA rendered as a pill button */
+.hero-banner .hero-banner-content a:any-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid var(--brand-navy, rgb(23 15 95));
+  border-radius: 24px;
+  color: var(--brand-navy, rgb(23 15 95));
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.hero-banner .hero-banner-content a:any-link:hover,
+.hero-banner .hero-banner-content a:any-link:focus {
+  background-color: var(--brand-navy, rgb(23 15 95));
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .hero-banner {
+    min-height: 440px;
+    padding: 48px 32px;
+  }
+
+  .hero-banner .hero-banner-content {
+    padding: 36px 40px;
+  }
+
+  .hero-banner .hero-banner-content h1 {
+    font-size: 48px;
+  }
+}

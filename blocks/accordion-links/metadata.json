@@ -1,0 +1,38 @@
+{
+  "variantName": "accordion-links",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:17:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-impact/impact-reporting.html",
+    "originPage": "Medtronic Impact reporting page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "faq",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "expandable panels, each a title summary + a body containing a list of resource / PDF download links",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "expandable disclosure / resource sections (ESG, policies, reports)",
+      "collapsible link lists grouped under headings",
+      "FAQ-style expand/collapse content on a light background"
+    ],
+    "notSuitableFor": [
+      "tabbed content switchers (use tabs)",
+      "always-visible link lists that do not need expand/collapse (use default content)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-impact/impact-reporting"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T18:17:00.000Z"
+  }
+}

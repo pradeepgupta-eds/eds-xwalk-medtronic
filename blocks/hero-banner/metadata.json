@@ -1,0 +1,42 @@
+{
+  "variantName": "hero-banner",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:15:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-impact/impact-reporting.html",
+    "originPage": "Medtronic Impact reporting page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "full-bleed background photograph + left-aligned translucent white panel (eyebrow + heading + supporting line + single download CTA)",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "content / reporting page heros with a single background photograph",
+      "pages leading with a downloadable-resource CTA (PDF report) over an image",
+      "left-overlay text-panel heros on a full-bleed photo"
+    ],
+    "notSuitableFor": [
+      "heros with a looping background video (use hero-video / hero-stats)",
+      "dark full-bleed video heros with a stats strip (use hero-stats)",
+      "light two-column text-beside-media heros with an overlaid stats bar (use hero-impact)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/our-impact/impact-reporting",
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T18:29:00.000Z"
+  }
+}

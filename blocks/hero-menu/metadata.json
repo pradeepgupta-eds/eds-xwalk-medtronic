@@ -1,0 +1,43 @@
+{
+  "variantName": "hero-menu",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:22:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals.html",
+    "originPage": "Healthcare professionals menu page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "full-bleed dark background graphic + single left-aligned white heading (no panel, no CTA, no stats)",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "section / menu landing page heros with a full-bleed background graphic and a plain heading",
+      "dark full-bleed image heros with a single left-aligned white headline and no call-to-action",
+      "top-of-page banners that lead a link/tile grid"
+    ],
+    "notSuitableFor": [
+      "heros with a background video (use hero-video / hero-stats)",
+      "dark full-bleed video heros with an overlaid stats strip + CTA (use hero-stats)",
+      "light two-column text-beside-media heros with a stats bar (use hero-impact)",
+      "light full-bleed photo heros with a translucent left panel and a download CTA (use hero-banner)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals",
+      "/en-us/healthcare-professionals/specialties"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T18:26:00.000Z"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-logos",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals/specialties/acute-care-monitoring.html",
+    "originPage": "Acute Care & Monitoring specialty detail page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "logos",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of partner / organization logo images only, no title, description, or per-logo link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "partner / society logo walls (image-only grid)",
+      "certification or membership badge grids without captions",
+      "trusted-by logo strips"
+    ],
+    "notSuitableFor": [
+      "award cards needing a linked title + description blurb (use cards-awards)",
+      "product teasers (use cards-product)",
+      "feature / pillar cards with headings and descriptions (use cards-feature)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T18:45:00.000Z"
+  }
+}

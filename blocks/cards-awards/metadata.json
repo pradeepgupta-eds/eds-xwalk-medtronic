@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-awards",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:16:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-impact/impact-reporting.html",
+    "originPage": "Medtronic Impact reporting page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "row of bordered cards, each a centered award logo image + bold externally-linked title + short description sentence",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "award / recognition / accolade card rows (logo + title + short blurb)",
+      "partner or certification badge grids with an external link per item",
+      "bordered card grids with a centered logo and a body sentence"
+    ],
+    "notSuitableFor": [
+      "full-bleed photo teaser cards with a category tag (use cards-topic)",
+      "blue icon-link tiles (use cards-tiles)",
+      "KPI statistic cards with a large figure + label (use cards-stats)",
+      "filterable article grids with a topic select + Load more (use cards-articles)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-impact/impact-reporting"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T18:16:00.000Z"
+  }
+}

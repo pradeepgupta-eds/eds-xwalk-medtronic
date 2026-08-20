@@ -1,0 +1,83 @@
+/* Block: hero-menu -- Medtronic "Healthcare professionals" hero.
+ * A DARK FULL-BLEED hero: a background graphic (navy particle image) fills the
+ * band edge to edge with a single left-aligned white heading over it. No
+ * translucent panel, no CTA, no stats bar, no side media. Contrast with
+ * hero-video (centered white card + video), hero-stats (dark full-bleed video
+ * + stats strip), hero-impact (light two-column text-beside-media + stats) and
+ * hero-banner (light full-bleed photo + left translucent panel + CTA). */
+
+/* ---- Full-bleed band ---- */
+.hero-menu-container .hero-menu-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-menu {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  padding: 40px 24px;
+  overflow: hidden;
+  background-color: var(--dark-color, #00001c);
+}
+
+/* Inner grid wrapper (the block's single row) */
+.hero-menu > div {
+  position: static;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- Background media (full-bleed) ---- */
+.hero-menu .hero-menu-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+}
+
+.hero-menu .hero-menu-media picture,
+.hero-menu .hero-menu-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Heading over the graphic (left aligned, white) ---- */
+.hero-menu .hero-menu-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  max-width: 50%;
+  color: var(--background-color, #f5f5f5);
+}
+
+.hero-menu .hero-menu-content h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+  color: var(--background-color, #f5f5f5);
+}
+
+.hero-menu .hero-menu-content p {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--background-color, #f5f5f5);
+}
+
+@media (width >= 900px) {
+  .hero-menu {
+    min-height: 420px;
+    padding: 48px 32px;
+  }
+
+  .hero-menu .hero-menu-content h1 {
+    font-size: 52px;
+  }
+}
