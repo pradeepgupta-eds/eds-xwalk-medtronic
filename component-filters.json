@@ -19,7 +19,43 @@
     ]
   },
   {
+    "id": "accordion-links",
+    "components": [
+      "accordion-links-item"
+    ]
+  },
+  {
     "id": "cards-articles",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-awards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-feature",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-logos",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-nav",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-product",
     "components": [
       "card"
     ]
@@ -52,6 +88,21 @@
     "id": "carousel-news",
     "components": [
       "carousel-news-item"
+    ]
+  },
+  {
+    "id": "columns-connect",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
@@ -116,6 +167,21 @@
   },
   {
     "id": "columns-stats",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "columns-video",
     "components": [
       "column"
     ]

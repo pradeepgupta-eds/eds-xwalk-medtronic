@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-impact",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-20T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-impact.html",
+    "originPage": "Our Impact overview page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + paragraph on the left, media card (looping video / image) on the right, overlaid statistics bar (3 figure/label pairs) + footnote link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "light top-of-page heroes laid out as text-beside-media",
+      "brand banners that overlay a small statistics / KPI strip on a media card",
+      "Our Impact / mission-style intros pairing a headline with headline figures on a light background"
+    ],
+    "notSuitableFor": [
+      "dark full-bleed hero banners with an overlaid stats strip (use hero-stats)",
+      "light heroes with a single centered white content card and no stats (use hero-video)",
+      "simple heroes without a media card or stats"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-impact"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T00:00:00.000Z"
+  }
+}

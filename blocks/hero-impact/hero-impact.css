@@ -1,0 +1,153 @@
+/* Block: hero-impact -- Medtronic "Our Impact" hero.
+ * A LIGHT, two-column hero: eyebrow + H1 + paragraph on the left, and a media
+ * card (looping background video, falls back to a background image) on the
+ * right with a translucent statistics bar overlaid across the bottom of the
+ * card. Matches the source design of the "A healthy life. A healthy planet.
+ * For everyone." hero. Contrast with hero-video (centered white card, no stats)
+ * and hero-stats (dark full-bleed band). */
+
+/* ---- Light band, full width, comfortable padding ---- */
+.hero-impact-container .hero-impact-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-impact {
+  box-sizing: border-box;
+  padding: 40px 24px 48px;
+  background-color: #fff;
+  color: #1a1a24;
+}
+
+/* Two-column layout on wide viewports: text left, media card right */
+.hero-impact > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* text cell */
+.hero-impact > div > div:first-child {
+  order: 1;
+}
+
+/* media cell (the card) */
+.hero-impact > div > div:nth-child(2) {
+  order: 2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Eyebrow (first paragraph) ---- */
+.hero-impact > div > div:first-child > p:first-child {
+  margin: 0 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: #5a5a6e;
+}
+
+.hero-impact h1 {
+  margin: 0 0 16px;
+  max-width: 620px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1a1a24;
+}
+
+.hero-impact > div > div:first-child > p:not(:first-child) {
+  margin: 0 0 16px;
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3a3a48;
+}
+
+/* ---- Media card: background video / image ---- */
+.hero-impact .hero-impact-bg,
+.hero-impact picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-impact .hero-impact-bg,
+.hero-impact picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Overlaid statistics bar (sits over the lower part of the media card) ---- */
+.hero-impact .hero-impact-bar {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: rgb(255 255 255 / 92%);
+  box-shadow: rgb(0 0 0 / 10%) 0 2px 12px 0;
+}
+
+.hero-impact .hero-impact-bar > li {
+  flex: 1 1 120px;
+  min-width: 100px;
+}
+
+.hero-impact .hero-impact-bar strong,
+.hero-impact .hero-impact-bar > li > *:first-child {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1a1a24;
+}
+
+.hero-impact .hero-impact-bar > li > *:not(:first-child) {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #5a5a6e;
+}
+
+/* CTA / footnote link (e.g. "Information reflects 2025 Impact Report") */
+.hero-impact a:any-link {
+  color: #0a44c2;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .hero-impact {
+    padding: 64px 32px;
+  }
+
+  .hero-impact > div {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+  }
+
+  .hero-impact h1 {
+    font-size: 52px;
+  }
+
+  /* overlay the stats bar across the bottom of the media card */
+  .hero-impact > div > div:nth-child(2) {
+    position: relative;
+  }
+
+  .hero-impact .hero-impact-bar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+  }
+}

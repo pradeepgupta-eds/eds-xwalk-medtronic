@@ -1,0 +1,42 @@
+{
+  "variantName": "columns-connect",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals/specialties/acute-care-monitoring.html",
+    "originPage": "Acute Care & Monitoring specialty detail page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "connect",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "multi-column 'connect with us' band: social-follow column (heading + paragraph + link list) + contact column (heading + paragraph + CTA button) + supporting image column",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "'connect with us' / 'follow us' engagement bands with social links and a contact CTA",
+      "bottom-of-page contact promos pairing social follow links with a representative CTA and an image",
+      "multi-column engagement bands on a light-grey panel"
+    ],
+    "notSuitableFor": [
+      "background-image careers / investor promos with icon quick-links (use columns-promo)",
+      "single image + heading + Learn more promo cards (use columns-promo-card)",
+      "media-beside-text bands (use columns-video)",
+      "dark single-CTA banners (use columns-cta)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T18:45:00.000Z"
+  }
+}

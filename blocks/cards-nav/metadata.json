@@ -1,0 +1,44 @@
+{
+  "variantName": "cards-nav",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:22:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals.html",
+    "originPage": "Healthcare professionals menu page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "navigation",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "grid of white bordered link tiles, each a blue left-accent bar + a single linked heading (no image, no description)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "section / menu landing page navigation tile grids (linked heading only)",
+      "bordered white link-card grids with a colored left-accent bar",
+      "'choose a section' link lists rendered as equal bordered tiles"
+    ],
+    "notSuitableFor": [
+      "solid blue icon-link tiles with a circular icon (use cards-tiles)",
+      "bordered cards with a centered logo + description (use cards-awards)",
+      "photo teaser cards with an image + category + heading (use cards-topic)",
+      "KPI statistic cards with a figure + label (use cards-stats)",
+      "filterable article grids with a topic select + Load more (use cards-articles)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals",
+      "/en-us/healthcare-professionals/specialties"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T18:26:00.000Z"
+  }
+}

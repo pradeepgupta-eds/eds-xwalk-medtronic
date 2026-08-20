@@ -97,6 +97,100 @@
           "instances": ["#container-a5f4363e21"]
         }
       ]
+    },
+    {
+      "name": "our-impact",
+      "urls": ["https://www.medtronic.com/en-us/our-impact.html"],
+      "coverageGaps": [],
+      "description": "Medtronic Our Impact overview: light hero with stats bar, promo cards, topic cards grid with CEO quote, icon-link tiles, and a filterable article grid. Reuses shared header and footer.",
+      "sections": [
+        { "id": "impact-hero", "name": "impact-hero", "selector": "#container-f654cca8c6" },
+        { "id": "labs-promo", "name": "labs-promo", "selector": "#container-107b7b993b" },
+        { "id": "topic-cards-grid", "name": "topic-cards-grid", "selector": "#container-3266305601" },
+        { "id": "where-health-promo", "name": "where-health-promo", "selector": "#container-60773eb30d" },
+        { "id": "more-about-tiles", "name": "more-about-tiles", "selector": "#container-6595faf5b7" },
+        { "id": "article-grid", "name": "article-grid", "selector": "#container-7b6f81c377" }
+      ],
+      "blocks": [
+        { "name": "hero-impact", "instances": ["#container-f654cca8c6 .banner", ".banner"] },
+        { "name": "columns-promo-card", "instances": ["#container-107b7b993b", "#container-60773eb30d"] },
+        { "name": "cards-topic", "instances": ["#container-3266305601"] },
+        { "name": "cards-tiles", "instances": ["#container-6595faf5b7"] },
+        { "name": "cards-articles", "instances": ["#container-7b6f81c377"] }
+      ]
+    },
+    {
+      "name": "impact-reporting",
+      "urls": ["https://www.medtronic.com/en-us/our-impact/impact-reporting.html"],
+      "coverageGaps": [],
+      "description": "Medtronic Impact Reporting page: full-bleed photo hero with overlay panel + report CTA, KPI stat figures, award/recognition cards, CEO dialogue promo, ESG disclosures accordion of resource links, and a filterable article grid.",
+      "sections": [
+        { "id": "impact-hero", "name": "impact-hero", "selector": "#container-06d55a2869" },
+        { "id": "year-in-review", "name": "year-in-review", "selector": "#container-8df4d32336" },
+        { "id": "recognition-cards", "name": "recognition-cards", "selector": "#container-78f03a6dc7" },
+        { "id": "ceo-dialogue-promo", "name": "ceo-dialogue-promo", "selector": "#container-f890070efe" },
+        { "id": "esg-disclosures-accordion", "name": "esg-disclosures-accordion", "selector": "#container-d473c47fc3" },
+        { "id": "article-grid", "name": "article-grid", "selector": "#container-7a6689b4bf" }
+      ],
+      "blocks": [
+        { "name": "hero-banner", "instances": ["#container-06d55a2869"] },
+        { "name": "cards-stats", "instances": ["#container-8df4d32336"] },
+        { "name": "cards-awards", "instances": ["#container-78f03a6dc7"] },
+        { "name": "columns-promo-card", "instances": ["#container-f890070efe"] },
+        { "name": "accordion-links", "instances": ["#container-d473c47fc3"] },
+        { "name": "cards-articles", "instances": ["#container-7a6689b4bf"] }
+      ]
+    },
+    {
+      "name": "healthcare-professionals",
+      "urls": ["https://www.medtronic.com/en-us/healthcare-professionals.html"],
+      "coverageGaps": [],
+      "description": "Medtronic Healthcare Professionals menu page: dark full-bleed graphic hero with a single heading and a grid of bordered navigation link tiles.",
+      "sections": [
+        { "id": "hero", "name": "hero", "selector": "div.hero-main-content" },
+        { "id": "nav-tiles", "name": "nav-tiles", "selector": "div.multi-teaser-layout" }
+      ],
+      "blocks": [
+        { "name": "hero-menu", "instances": ["div.hero-main-content"] },
+        { "name": "cards-nav", "instances": ["div.multi-teaser-layout"] }
+      ]
+    },
+    {
+      "name": "specialties",
+      "urls": ["https://www.medtronic.com/en-us/healthcare-professionals/specialties.html"],
+      "coverageGaps": [],
+      "description": "Medtronic Specialties listing page (menu twin of healthcare-professionals): dark graphic hero + grid of bordered navigation link tiles (20 specialties).",
+      "sections": [
+        { "id": "hero", "name": "hero", "selector": "div.hero-main-content" },
+        { "id": "nav-tiles", "name": "nav-tiles", "selector": "div.multi-teaser-layout" }
+      ],
+      "blocks": [
+        { "name": "hero-menu", "instances": ["div.hero-main-content"] },
+        { "name": "cards-nav", "instances": ["div.multi-teaser-layout"] }
+      ]
+    },
+    {
+      "name": "specialty-detail",
+      "urls": ["https://www.medtronic.com/en-us/healthcare-professionals/specialties/acute-care-monitoring.html"],
+      "coverageGaps": [],
+      "description": "Medtronic specialty detail page (Acute Care & Monitoring): full-bleed photo hero, video+text band, featured product cards, circular-image feature cards, partner logo wall, and a connect/social band.",
+      "sections": [
+        { "id": "hero", "name": "hero", "selector": ".hero-banner.herobanner" },
+        { "id": "video-empower", "name": "video-empower", "selector": "#container-32cfe2f49b" },
+        { "id": "featured-products", "name": "featured-products", "selector": "#container-36081a734a" },
+        { "id": "education", "name": "education", "selector": "#container-e2ed390e5a" },
+        { "id": "investing", "name": "investing", "selector": "#container-976abc859c" },
+        { "id": "partners", "name": "partners", "selector": "#container-e58f54f8a6" },
+        { "id": "connect", "name": "connect", "selector": "#container-d06c5dbb8b" }
+      ],
+      "blocks": [
+        { "name": "hero-banner", "instances": [".hero-banner.herobanner"] },
+        { "name": "columns-video", "instances": ["#container-32cfe2f49b"] },
+        { "name": "cards-product", "instances": ["#container-36081a734a"] },
+        { "name": "cards-feature", "instances": ["#container-e2ed390e5a", "#container-976abc859c"] },
+        { "name": "cards-logos", "instances": ["#container-e58f54f8a6"] },
+        { "name": "columns-connect", "instances": ["#container-d06c5dbb8b"] }
+      ]
     }
   ]
 }

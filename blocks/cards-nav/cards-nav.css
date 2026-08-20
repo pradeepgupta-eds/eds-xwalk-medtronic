@@ -1,0 +1,83 @@
+/* Block: cards-nav -- Medtronic "Healthcare professionals" section tile grid.
+ * A grid of white BORDERED navigation tiles, each with a blue (electric-blue)
+ * left-accent bar and a single linked heading. No images, no icons, no body
+ * copy. Contrast with cards-tiles (solid blue panels + circular icon),
+ * cards-awards (bordered logo + title + description), cards-topic (photo
+ * teasers) and cards-articles (filterable grid + Load more). */
+
+.cards-nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.cards-nav > ul > li {
+  position: relative;
+  border: 1px solid #dadada;
+  background-color: var(--background-color, #f5f5f5);
+  min-height: 120px;
+  transition: box-shadow 0.2s;
+}
+
+/* Blue (electric-blue) left-accent bar */
+.cards-nav > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 4px;
+  height: 24px;
+  background-color: var(--link-color, #170f5f);
+}
+
+.cards-nav > ul > li:hover {
+  box-shadow: 0 2px 12px rgb(0 0 0 / 12%);
+}
+
+.cards-nav .cards-nav-card-body {
+  margin: 20px 24px;
+}
+
+.cards-nav .cards-nav-card-body h2,
+.cards-nav .cards-nav-card-body h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.cards-nav .cards-nav-card-body a:any-link {
+  color: var(--link-color, #170f5f);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cards-nav .cards-nav-card-body a:any-link:hover,
+.cards-nav .cards-nav-card-body a:any-link:focus {
+  text-decoration: underline;
+}
+
+/* Optional image tiles (this variant is normally image-less) */
+.cards-nav .cards-nav-card-image {
+  line-height: 0;
+}
+
+.cards-nav > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (width >= 600px) {
+  .cards-nav > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-nav > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals/specialties/acute-care-monitoring.html",
+    "originPage": "Acute Care & Monitoring specialty detail page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "centered feature cards, each a large circular image + heading + description paragraph + optional text CTA link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "circular-image feature / pillar card rows (image + heading + description)",
+      "education program teasers with an optional 'learn more' text link",
+      "value-pillar rows (health equity, sustainability, etc.) with no per-item CTA"
+    ],
+    "notSuitableFor": [
+      "product teasers inside bordered cards with a button CTA (use cards-product)",
+      "icon + figure statistic cards (use cards-stats)",
+      "logo-only walls (use cards-logos)",
+      "editorial topic teasers with a category label (use cards-topic)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T18:45:00.000Z",
+    "usageNote": "Used twice on the same page: Education cards and Investing-for-the-future pillars."
+  }
+}

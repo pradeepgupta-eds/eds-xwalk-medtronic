@@ -30,8 +30,11 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["/en-us/index"],
-    "reuseCount": 1,
-    "lastUsed": "2026-08-20T12:24:00.000Z"
+    "pagesUsing": [
+      "/en-us/index",
+      "/en-us/our-impact/impact-reporting"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T18:18:00.000Z"
   }
 }

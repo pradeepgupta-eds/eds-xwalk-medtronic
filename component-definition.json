@@ -83,6 +83,38 @@
       "id": "blocks",
       "components": [
         {
+          "title": "Accordion Links",
+          "id": "accordion-links",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Accordion Links",
+                  "filter": "accordion-links"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Accordion Links Item",
+          "id": "accordion-links-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Accordion Links Item",
+                  "model": "accordion-links-item",
+                  "summary": "Section title",
+                  "text": "<p>A list of resource / PDF download links.</p>"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards Articles",
           "id": "cards-articles",
           "plugins": {
@@ -92,6 +124,156 @@
                 "template": {
                   "name": "Cards Articles",
                   "filter": "cards-articles"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Awards",
+          "id": "cards-awards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Awards",
+                  "filter": "cards-awards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Feature",
+          "id": "cards-feature",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Feature",
+                  "filter": "cards-feature"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Logos",
+          "id": "cards-logos",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Logos",
+                  "filter": "cards-logos"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Nav",
+          "id": "cards-nav",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Nav",
+                  "filter": "cards-nav"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Product",
+          "id": "cards-product",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Product",
+                  "filter": "cards-product"
                 }
               }
             }
@@ -263,6 +445,21 @@
           }
         },
         {
+          "title": "Columns Connect",
+          "id": "columns-connect",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "3",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns Cta",
           "id": "columns-cta",
           "plugins": {
@@ -338,6 +535,21 @@
           }
         },
         {
+          "title": "Columns Video",
+          "id": "columns-video",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "plugins": {
@@ -362,6 +574,51 @@
                 "template": {
                   "name": "Fragment",
                   "model": "fragment"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero Banner",
+          "id": "hero-banner",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero Banner",
+                  "model": "hero-banner"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero Impact",
+          "id": "hero-impact",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero Impact",
+                  "model": "hero-impact"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero Menu",
+          "id": "hero-menu",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero Menu",
+                  "model": "hero-menu"
                 }
               }
             }

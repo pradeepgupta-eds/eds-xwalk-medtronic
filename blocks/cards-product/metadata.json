@@ -1,0 +1,42 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T18:45:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/healthcare-professionals/specialties/acute-care-monitoring.html",
+    "originPage": "Acute Care & Monitoring specialty detail page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "product",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "row of bordered white product cards, each a product image + bold product name + description paragraph + 'Learn more' CTA button",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured / product teaser grids (image + name + description + Learn more)",
+      "therapy or solution card grids on specialty and product landing pages",
+      "bordered white product cards with a single CTA per card"
+    ],
+    "notSuitableFor": [
+      "editorial topic teasers without a description body (use cards-topic)",
+      "icon + figure statistic cards (use cards-stats)",
+      "logo-only walls (use cards-logos)",
+      "circular-image feature / pillar cards (use cards-feature)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T18:45:00.000Z"
+  }
+}

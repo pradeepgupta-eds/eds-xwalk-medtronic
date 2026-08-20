@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.medtronic.com/en-us/healthcare-professionals.html",
+  "path": "en-us/healthcare-professionals",
+  "timestamp": "2026-08-20T19:06:52.806Z",
+  "title": "Healthcare Professionals | Medtronic",
+  "template": "healthcare-professionals",
+  "blocks": [
+    "hero-menu",
+    "cards-nav"
+  ]
+}

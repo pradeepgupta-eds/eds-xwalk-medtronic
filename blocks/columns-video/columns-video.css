@@ -1,0 +1,47 @@
+/* columns-video: media (Scene7/DM video or image) beside a supporting text paragraph, on a light-grey panel */
+.columns-video > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-video img {
+  width: 100%;
+}
+
+.columns-video > div > div {
+  order: 1;
+}
+
+.columns-video > div > .columns-video-img-col {
+  order: 0;
+}
+
+.columns-video > div > .columns-video-img-col img {
+  display: block;
+}
+
+/* embedded video player / iframe should be responsive */
+.columns-video .columns-video-img-col iframe,
+.columns-video .columns-video-img-col video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.columns-video > div > div p {
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 900px) {
+  .columns-video > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 48px;
+  }
+
+  .columns-video > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

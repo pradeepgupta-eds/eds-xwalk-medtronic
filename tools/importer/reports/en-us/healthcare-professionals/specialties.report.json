@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.medtronic.com/en-us/healthcare-professionals/specialties.html",
+  "path": "en-us/healthcare-professionals/specialties",
+  "timestamp": "2026-08-20T19:07:02.443Z",
+  "title": "Specialties for Healthcare Professionals | Medtronic",
+  "template": "specialties",
+  "blocks": [
+    "hero-menu",
+    "cards-nav"
+  ]
+}

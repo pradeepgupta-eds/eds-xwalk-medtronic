@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.medtronic.com/en-us/our-impact.html",
+  "path": "en-us/our-impact",
+  "timestamp": "2026-08-20T19:06:26.376Z",
+  "title": "A healthy life. A healthy planet. For everyone. | Medtronic",
+  "template": "our-impact",
+  "blocks": [
+    "hero-impact",
+    "columns-promo-card",
+    "columns-promo-card",
+    "cards-topic",
+    "cards-tiles",
+    "cards-articles"
+  ]
+}
