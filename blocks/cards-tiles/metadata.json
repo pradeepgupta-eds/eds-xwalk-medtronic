@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-tiles",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-company.html",
+    "originPage": "Our Company overview page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "colored",
+    "density": "compact",
+    "purpose": "navigation",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "row of equal blue panels, each a circular icon + linked label",
+    "buttonCount": 4,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "icon link tile rows / section navigation shortcuts",
+      "colored quick-link tiles with an icon and a single label"
+    ],
+    "notSuitableFor": [
+      "photo teaser cards with body copy (use cards-topic)",
+      "statistic strips with large figures (use cards-stats)",
+      "filterable article grids (use cards-articles)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-company"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T00:00:00.000Z"
+  }
+}

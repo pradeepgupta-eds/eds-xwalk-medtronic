@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-topic",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-company.html",
+    "originPage": "Our Company overview page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of topic teaser cards, each an image + uppercase category label + linked heading; supports an occasional blockquote card",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "editorial topic teaser grids (image + category + linked heading)",
+      "content hubs mixing photo cards with an occasional quote card"
+    ],
+    "notSuitableFor": [
+      "statistic / KPI strips with icons and figures (use cards-stats)",
+      "icon-only link tiles (use cards-tiles)",
+      "filterable article lists with load-more (use cards-articles)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-company"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T00:00:00.000Z"
+  }
+}

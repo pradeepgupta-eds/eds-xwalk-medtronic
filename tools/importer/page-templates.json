@@ -59,6 +59,44 @@
           "instances": ["#Careers", "div.wrapper-careers-section", "#ShareHolder", "div.wrapper-investors-section"]
         }
       ]
+    },
+    {
+      "name": "our-company",
+      "urls": [
+        "https://www.medtronic.com/en-us/our-company.html"
+      ],
+      "coverageGaps": [],
+      "description": "Medtronic Our Company overview page: stats hero, promo cards (Medtronic Stories, Our Impact), topic cards grid with CEO quote, Explore Our Company icon-link tiles, and a filterable article/story grid. Reuses shared header and footer.",
+      "sections": [
+        { "id": "stats-hero", "name": "stats-hero", "selector": "#container-5d1a569867" },
+        { "id": "promo-stories", "name": "promo-stories", "selector": "#container-3c577964f4" },
+        { "id": "topic-cards-grid", "name": "topic-cards-grid", "selector": "#container-0a7ecc757b" },
+        { "id": "promo-impact", "name": "promo-impact", "selector": "#container-9c8bea0160" },
+        { "id": "explore-tiles", "name": "explore-tiles", "selector": "#container-eeba63a201" },
+        { "id": "article-grid", "name": "article-grid", "selector": "#container-a5f4363e21" }
+      ],
+      "blocks": [
+        {
+          "name": "hero-stats",
+          "instances": ["#container-5d1a569867 .banner", ".banner"]
+        },
+        {
+          "name": "columns-promo-card",
+          "instances": ["#container-3c577964f4", "#container-9c8bea0160"]
+        },
+        {
+          "name": "cards-topic",
+          "instances": ["#container-0a7ecc757b"]
+        },
+        {
+          "name": "cards-tiles",
+          "instances": ["#container-eeba63a201"]
+        },
+        {
+          "name": "cards-articles",
+          "instances": ["#container-a5f4363e21"]
+        }
+      ]
     }
   ]
 }

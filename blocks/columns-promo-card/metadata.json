@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-promo-card",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-20T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-company.html",
+    "originPage": "Our Company overview page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "promo",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "two-column light promo card: image beside eyebrow + heading + single 'Learn more' CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "light image + text promo cards with a single Learn more link",
+      "editorial teasers (Stories, Impact) with an image on one side and copy on the other"
+    ],
+    "notSuitableFor": [
+      "promo banners over a background photo with multiple quick-link buttons (use columns-promo)",
+      "colored gradient two-panel callouts (use columns-impact)",
+      "dark CTA bars (use columns-cta)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-company"],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-stats",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-20T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-company.html",
+    "originPage": "Our Company overview page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background looping video + eyebrow + heading + paragraph + overlaid statistics bar (3 figure/label pairs) + CTA link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "top-of-page dark hero banners with a looping background video",
+      "brand banners that overlay a small statistics / KPI strip on the hero",
+      "About / Our Company style intros combining a headline with headline figures"
+    ],
+    "notSuitableFor": [
+      "light hero banners with a white content card (use hero-video)",
+      "simple heroes without an overlaid stats strip",
+      "dense multi-column content sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-company"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T00:00:00.000Z"
+  }
+}

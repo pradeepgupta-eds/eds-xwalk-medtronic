@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-articles",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-08-20T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/our-company.html",
+    "originPage": "Our Company overview page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "topic filter select above a grid of article cards (image + category + linked heading) with a Load more button, inside a shadowed white container",
+    "buttonCount": 1,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "filterable article / story grids with a topic dropdown and load-more",
+      "content listing sections where readers narrow by category"
+    ],
+    "notSuitableFor": [
+      "static teaser grids without filtering (use cards-topic)",
+      "horizontal news scroll tracks (use carousel-news)",
+      "icon link tiles (use cards-tiles)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/our-company"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T00:00:00.000Z"
+  }
+}
