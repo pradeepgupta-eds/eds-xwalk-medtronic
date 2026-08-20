@@ -1,0 +1,285 @@
+/* columns-promo — Medtronic full-bleed promo banner (Careers / Investors).
+   Values extracted from medtronic.com #Careers and #ShareHolder computed styles.
+   Two treatments handled in one block:
+   - .columns-promo-dark  : dark full-bleed photo background, white text (Careers)
+   - .columns-promo-light : light swirl background, navy text (Investors)
+   Layout (decorated by columns-promo.js): a text column top-left, a group of
+   secondary links top-right, and a row of icon quick-links bottom-right, all
+   overlaid on the background. */
+
+.columns-promo {
+  --cp-accent: #1010eb;
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  margin-left: 50%;
+  padding: 40px 24px;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+
+/* Background layer (dark variant photo) */
+.columns-promo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.columns-promo-bg picture,
+.columns-promo-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Keep every content layer above the background.
+   Listed by class (not `*`) so the desktop `position: absolute` overrides
+   win on specificity. */
+.columns-promo-row,
+.columns-promo-content,
+.columns-promo-secondary,
+.columns-promo-quicklinks {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Variant backgrounds & colors ---------- */
+.columns-promo-dark {
+  --cp-accent: rgb(74 125 255 / 90%);
+
+  color: #fff;
+}
+
+/* Left-weighted scrim so text stays legible over the photo */
+.columns-promo-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(rgb(0 0 20 / 55%), rgb(0 0 20 / 40%));
+}
+
+.columns-promo-light {
+  --cp-accent: #1010eb;
+
+  color: rgb(0 0 0 / 77%);
+  background-color: #e9e9e9;
+  background-image: url("https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/hp-investors-cnpt.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+/* ---------- Text column ---------- */
+.columns-promo > div {
+  padding: 0;
+}
+
+.columns-promo-content {
+  max-width: 400px;
+}
+
+/* body paragraph (base first, then variants — ascending specificity) */
+.columns-promo-content > p {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.columns-promo-dark .columns-promo-content > p {
+  color: #fff;
+}
+
+/* eyebrow (first paragraph) */
+.columns-promo-content > p:first-child {
+  width: fit-content;
+  min-width: 165px;
+  margin: 0 0 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid currentcolor;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.29px;
+  line-height: 19.2px;
+  text-transform: uppercase;
+}
+
+.columns-promo-dark .columns-promo-content > p:first-child {
+  color: rgb(255 255 255 / 70%);
+}
+
+.columns-promo-light .columns-promo-content > p:first-child {
+  color: rgb(0 0 0 / 55%);
+}
+
+.columns-promo-content h2 {
+  margin: 33px 0 15px;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.columns-promo-dark .columns-promo-content h2 {
+  color: #fff;
+}
+
+.columns-promo-light .columns-promo-content h2 {
+  color: #170f5f;
+}
+
+/* ---------- Arrow-badge links (primary CTA + secondary) ---------- */
+.columns-promo-cta a,
+.columns-promo-secondary a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.columns-promo-dark .columns-promo-cta a,
+.columns-promo-dark .columns-promo-secondary a {
+  color: #fff;
+}
+
+.columns-promo-light .columns-promo-cta a {
+  color: #1010eb;
+}
+
+.columns-promo-light .columns-promo-secondary a {
+  color: #170f5f;
+}
+
+.columns-promo-cta a::after,
+.columns-promo-secondary a::after {
+  content: "";
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--cp-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13M12 5l7 7-7 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+}
+
+.columns-promo-cta {
+  margin: 0;
+}
+
+/* ---------- Secondary links (top-right on desktop) ---------- */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-promo-secondary p {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+  padding: 14px 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-promo-secondary p:not(:last-child) {
+  border-bottom: 1px solid;
+}
+
+.columns-promo-dark .columns-promo-secondary p:not(:last-child) {
+  border-color: rgb(255 255 255 / 30%);
+}
+
+.columns-promo-light .columns-promo-secondary p:not(:last-child) {
+  border-color: rgb(0 0 0 / 15%);
+}
+
+/* ---------- Icon quick-links (bottom-right on desktop) ---------- */
+.columns-promo-quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns-promo-quicklinks li {
+  flex: 1 1 120px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-promo-quicklinks a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 96px;
+  padding: 12px;
+  background-color: var(--cp-accent);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+
+.columns-promo-quicklinks a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.columns-promo-quicklinks img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- Desktop ---------- */
+@media (width >= 900px) {
+  .columns-promo {
+    min-height: 700px;
+    padding: 56px max(24px, calc((100vw - 1200px) / 2));
+  }
+
+  .columns-promo-dark::before {
+    background: linear-gradient(90deg, rgb(0 0 20 / 55%) 0%, rgb(0 0 20 / 20%) 38%, rgb(0 0 20 / 0%) 60%);
+  }
+
+  .columns-promo-content h2 {
+    font-size: 52px;
+  }
+
+  .columns-promo-secondary {
+    position: absolute;
+    top: 48px;
+    right: max(24px, calc((100vw - 1200px) / 2));
+    z-index: 2;
+    width: 232px;
+  }
+
+  .columns-promo-secondary p {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .columns-promo-quicklinks {
+    position: absolute;
+    right: max(24px, calc((100vw - 1200px) / 2));
+    bottom: 0;
+    z-index: 2;
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+
+  .columns-promo-quicklinks li {
+    flex: none;
+  }
+
+  .columns-promo-quicklinks a {
+    width: 207px;
+  }
+}

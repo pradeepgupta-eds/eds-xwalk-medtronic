@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-stats",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-20T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/index.html",
+    "originPage": "Medtronic corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "text column (eyebrow + heading + paragraph + CTA) beside media, with a 3-item stats strip",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "dark 'about us' split sections with statistics",
+      "text + media two-column bands on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "light promotional banners",
+      "repeating card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T12:24:00.000Z"
+  }
+}

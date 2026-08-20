@@ -1,0 +1,37 @@
+{
+  "variantName": "hero-video",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-08-20T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/index.html",
+    "originPage": "Medtronic corporate homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background video + eyebrow + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero with looping background video",
+      "top-of-page brand banners with light gradient background"
+    ],
+    "notSuitableFor": [
+      "dense multi-column content sections",
+      "dark full-bleed hero banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T12:24:00.000Z"
+  }
+}

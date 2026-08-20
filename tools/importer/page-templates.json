@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.medtronic.com/en-us/index.html"
+      ],
+      "coverageGaps": [],
+      "description": "Medtronic corporate homepage with hero video/card, news carousel, CTA banners, our-impact cards, careers, investors, header and footer",
+      "sections": [
+        { "id": "hero", "name": "hero", "selector": "div.hero-main-content" },
+        { "id": "news-media", "name": "news-media", "selector": "#News-Media" },
+        { "id": "who-we-are", "name": "who-we-are", "selector": "#who-we-are", "style": "dark" },
+        { "id": "cta-blueprint", "name": "cta-blueprint", "selector": "div.wrapper-cta-banner", "style": "dark" },
+        { "id": "our-impact", "name": "our-impact", "selector": "#Our-Impact" },
+        { "id": "careers", "name": "careers", "selector": "#Careers" },
+        { "id": "investors", "name": "investors", "selector": "#ShareHolder" }
+      ],
+      "blocks": [
+        {
+          "name": "hero-video",
+          "instances": ["div.hero-main-content", "#Header-video"]
+        },
+        {
+          "name": "carousel-news",
+          "instances": ["#News-Media", "#scroller"]
+        },
+        {
+          "name": "section-who-we-are",
+          "instances": ["#who-we-are"],
+          "section": "dark"
+        },
+        {
+          "name": "columns-stats",
+          "instances": ["#who-we-are"]
+        },
+        {
+          "name": "section-cta-blueprint",
+          "instances": ["div.wrapper-cta-banner"],
+          "section": "dark"
+        },
+        {
+          "name": "columns-cta",
+          "instances": ["div.wrapper-cta-banner"]
+        },
+        {
+          "name": "columns-impact",
+          "instances": ["#Our-Impact .our-impact-card", "#Our-Impact .access-card"]
+        },
+        {
+          "name": "cards-stats",
+          "instances": ["#Our-Impact .div2", "#Our-Impact .div3", "#Our-Impact .div4"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": ["#Careers", "div.wrapper-careers-section", "#ShareHolder", "div.wrapper-investors-section"]
+        }
+      ]
+    }
+  ]
+}

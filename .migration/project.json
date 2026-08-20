@@ -1,0 +1,15 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "eds-xwalk-medtronic": {
+      "previewOrg": "pradeepgupta-eds",
+      "previewSite": "eds-xwalk-medtronic",
+      "contentHostUrl": "author-p25321-e1006616.adobeaemcloud.com",
+      "aemSitePath": "/content/eds-xwalk-medtronic",
+      "aemAssetsFolderPath": "/content/dam/eds-xwalk-medtronic",
+      "aemSiteName": "eds-xwalk-medtronic",
+      "aemSiteTitle": "eds-xwalk-medtronic",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

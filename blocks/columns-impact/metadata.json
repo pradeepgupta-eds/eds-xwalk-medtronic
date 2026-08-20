@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-impact",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-20T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/index.html",
+    "originPage": "Medtronic corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "colored",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "two side-by-side promo panels with gradient/solid colored backgrounds, each eyebrow + heading + paragraph + CTA (second panel has image)",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "impact / mission promo sections with vivid gradient panels",
+      "two-panel colored feature callouts"
+    ],
+    "notSuitableFor": [
+      "plain light text columns",
+      "repeating uniform card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-20T12:24:00.000Z"
+  }
+}

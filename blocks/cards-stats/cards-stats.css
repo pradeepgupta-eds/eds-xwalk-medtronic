@@ -1,0 +1,89 @@
+/* cards-stats — Medtronic "Our Impact" statistic cards.
+   Each block instance is ONE borderless, centered card: animated icon +
+   large figure ($64M / 2.5M+ / 60%) + descriptive label. Three consecutive
+   instances read as a 3-up row on desktop and stack on mobile.
+   Values extracted from medtronic.com computed styles (see migration-work/cards-stats-extracted.css). */
+
+.cards-stats > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards-stats > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  padding: 20px 0;
+}
+
+/* icon: 66x66 animated gif */
+.cards-stats .cards-stats-card-image {
+  line-height: 0;
+  margin: 0;
+}
+
+.cards-stats .cards-stats-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-stats .cards-stats-card-image img {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.cards-stats .cards-stats-card-body {
+  margin: 0;
+}
+
+/* large figure — rendered as the card heading (h3) */
+.cards-stats .cards-stats-card-body h3 {
+  margin: 0;
+  color: rgb(16 16 235);
+  font-weight: 200;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+/* descriptive label */
+.cards-stats .cards-stats-card-body p {
+  max-width: 80%;
+  margin: 4px auto 0;
+  color: var(--brand-navy);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* "Impact Report FY25" link on the third card */
+.cards-stats .cards-stats-card-body p a:any-link {
+  color: var(--brand-navy);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  /* Lay the three consecutive single-card blocks out as a centered 3-up row.
+     The intro/outro columns-impact blocks in the same section stay block-level
+     (full width), so the three inline-block card wrappers flow onto their own
+     line between them. */
+  main > .section.cards-stats-container {
+    text-align: center;
+  }
+
+  main > .section.cards-stats-container > .cards-stats-wrapper {
+    display: inline-block;
+    width: 30%;
+    max-width: 360px;
+    vertical-align: top;
+  }
+
+  .cards-stats .cards-stats-card-body h3 {
+    font-size: 72px;
+  }
+}

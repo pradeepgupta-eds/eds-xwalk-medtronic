@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-08-20T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/index.html",
+    "originPage": "Medtronic corporate homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "mixed",
+    "density": "spacious",
+    "purpose": "promo",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + paragraph + primary CTA + secondary links + row of icon quick-link buttons, over a background image",
+    "buttonCount": 6,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "careers promo banners over background photos",
+      "investors / relations promo banners with quick-link buttons",
+      "any promo banner combining a CTA with a row of icon shortcut links"
+    ],
+    "notSuitableFor": [
+      "simple two-column text comparisons",
+      "repeating uniform card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/index"],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-20T12:24:00.000Z"
+  }
+}

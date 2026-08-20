@@ -1,0 +1,162 @@
+/* Block: carousel-news
+   Design migrated from medtronic.com #News-Media / #scroller.
+   Horizontal scroll track of fixed-width portrait article cards. */
+
+.carousel-news .carousel-news-slides-container {
+  position: relative;
+}
+
+.carousel-news .carousel-news-slides,
+.carousel-news .carousel-news-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Horizontal scroll track (source #scroller: display:flex, overflow-x:scroll) */
+.carousel-news .carousel-news-slides {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* measured 20px between cards */
+  overflow: auto clip;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.carousel-news .carousel-news-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each card: fixed 304px width, no card chrome (source cards are borderless) */
+.carousel-news .carousel-news-slide {
+  flex: 0 0 auto;
+  width: 304px; /* measured card width */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+/* Image cell */
+.carousel-news .carousel-news-slide .carousel-news-slide-image {
+  width: 100%;
+  line-height: 0;
+}
+
+.carousel-news .carousel-news-slide .carousel-news-slide-image picture {
+  display: block;
+}
+
+/* Portrait image, cover crop, no radius (source ratio 304 x 382 ~= 4/5) */
+.carousel-news .carousel-news-slide .carousel-news-slide-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Content cell */
+.carousel-news .carousel-news-slide .carousel-news-slide-content {
+  z-index: 1;
+  margin-top: 10px; /* source .news-content margin-top 10px */
+  width: 100%;
+  color: var(--text-color);
+}
+
+/* Category tag / eyebrow = first paragraph */
+.carousel-news .carousel-news-slide-content p:first-child {
+  margin: 26px 0 0; /* source .category margin 26px 0 0 */
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 19.2px;
+  letter-spacing: 1.286px;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 77%); /* source category color */
+}
+
+/* Headline */
+.carousel-news .carousel-news-slide-content h3 {
+  margin: 20px 0 10px; /* source .news-title margin */
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: normal;
+  color: var(--brand-navy); /* rgb(23,15,95) */
+}
+
+.carousel-news .carousel-news-slide-content h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carousel-news .carousel-news-slide-content h3 a:hover {
+  text-decoration: underline;
+}
+
+/* Source shows no dot indicators — hide them (JS still builds them for a11y) */
+.carousel-news .carousel-news-slide-indicators {
+  display: none;
+}
+
+/* Navigation arrows: source relies on scroll; keep arrows available but subtle,
+   pinned over the image band, hidden until hover/focus for a clean match. */
+.carousel-news .carousel-news-navigation-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 305px; /* ~image band height at 304px width * 4/5 = 380; center within upper band */
+  z-index: 2;
+  padding: 0 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.carousel-news:hover .carousel-news-navigation-buttons,
+.carousel-news:focus-within .carousel-news-navigation-buttons {
+  opacity: 1;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-news .carousel-news-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  pointer-events: auto;
+  background-color: var(--brand-navy);
+  transition: background-color 0.2s;
+}
+
+.carousel-news .carousel-news-navigation-buttons button:hover,
+.carousel-news .carousel-news-navigation-buttons button:focus-visible {
+  background-color: var(--brand-dark);
+}
+
+.carousel-news .carousel-news-navigation-buttons button::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-bottom: 0;
+  border-left: 0;
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-news .carousel-news-navigation-buttons button.slide-next::after {
+  left: calc(50% - 2px);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
