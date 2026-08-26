@@ -85,6 +85,12 @@
     ]
   },
   {
+    "id": "carousel-hero",
+    "components": [
+      "carousel-hero-item"
+    ]
+  },
+  {
     "id": "carousel-news",
     "components": [
       "carousel-news-item"

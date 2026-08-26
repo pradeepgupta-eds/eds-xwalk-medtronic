@@ -34,9 +34,10 @@
   "usage": {
     "pagesUsing": [
       "/en-us/our-impact/impact-reporting",
-      "/en-us/healthcare-professionals/specialties/acute-care-monitoring"
+      "/en-us/healthcare-professionals/specialties/acute-care-monitoring",
+      "/kr-ko/index"
     ],
-    "reuseCount": 2,
-    "lastUsed": "2026-08-20T18:29:00.000Z"
+    "reuseCount": 3,
+    "lastUsed": "2026-08-26T00:00:00.000Z"
   }
 }

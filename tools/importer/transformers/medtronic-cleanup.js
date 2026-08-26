@@ -44,6 +44,46 @@ export default function transform(hookName, element, payload) {
       '.mdt-subnav',
       '.subnav',
     ]);
+
+    // --- kr-ko locale chrome (classic slide-based markup; verified in
+    //     migration-work/cleaned.html for the kr-ko hero-landing template) ---
+    // Overlays/modals that would otherwise leak into or block block parsing:
+    //   #notification-container (line 2)  -> #modalWarn warn-on-leave dialog + cookie consent modal
+    //   #outdated               (line 34) -> outdated-browser banner
+    //   #search-overlay         (line 108)-> Coveo search overlay chrome
+    WebImporter.DOMUtils.remove(element, [
+      '#notification-container',
+      '#outdated',
+      '#search-overlay',
+    ]);
+
+    // kr-ko AddThis social-share widget (verified: div.addthis_outer / div.addthis_toolbox
+    // wrapping the "Open share options / 인쇄 / Email / Copy Link" list on press/article
+    // pages). It is share chrome, not article body, and must not leak into content.
+    WebImporter.DOMUtils.remove(element, [
+      '.addthis_outer',
+      '.addthis_toolbox',
+      '.open-share',
+      '.share-close-button',
+    ]);
+
+    // kr-ko header navigation chrome. On news/article pages the mobile menu +
+    // country/region selector are plain divs in the source body (not inside a
+    // <header>/<main> that would otherwise scope them out), so the header nav
+    // leaks into the article body ("메뉴 닫기 / 검색 닫기 / 한국어 / Adriatic ...").
+    // Verified stable Medtronic classes/ids: #main-navigation, .fixed-header-main-nav,
+    // .nav-menu, .country-selector, #headerCountry, .select-country.
+    WebImporter.DOMUtils.remove(element, [
+      '#main-navigation',
+      '.fixed-header-main-nav',
+      '.nav-menu',
+      '.country-selector',
+      '#headerCountry',
+      '.select-country',
+      '.country-selection',
+      '.breadcrumbs',
+      '.breadcrumb',
+    ]);
   }
 
   if (hookName === TransformHook.afterTransform) {

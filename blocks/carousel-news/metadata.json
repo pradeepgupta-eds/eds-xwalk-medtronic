@@ -30,8 +30,11 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["/en-us/index"],
-    "reuseCount": 1,
-    "lastUsed": "2026-08-20T12:24:00.000Z"
+    "pagesUsing": [
+      "/en-us/index",
+      "/kr-ko/index"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-08-26T00:00:00.000Z"
   }
 }

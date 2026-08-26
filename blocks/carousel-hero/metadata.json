@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-08-26T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/kr-ko/index.html",
+    "originPage": "kr-ko homepage (hero-landing template)",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "full-bleed autoplay rotating hero carousel; one large lifestyle image per slide with an overlaid content panel (category eyebrow + heading + description + link); prev/next arrows and dot indicators",
+    "slideCount": 4,
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-bleed rotating hero banners where one large slide is visible at a time",
+      "homepage / landing hero carousels pairing a background photo with an overlaid text panel and a link",
+      "auto-advancing image sliders with prev/next arrows and dot pagination"
+    ],
+    "notSuitableFor": [
+      "horizontal multi-card article/news rows (use carousel-news)",
+      "static single hero banners (use hero-banner)",
+      "grids of repeating cards (use cards)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/kr-ko/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-08-26T00:00:00.000Z"
+  }
+}
