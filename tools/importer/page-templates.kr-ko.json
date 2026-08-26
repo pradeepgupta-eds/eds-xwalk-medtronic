@@ -1,0 +1,394 @@
+{
+  "templates": [
+    {
+      "name": "contact-page",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/contact-us.html"
+      ],
+      "coverageGaps": [],
+      "description": "Contact page: intro plus contact details and links",
+      "blocks": []
+    },
+    {
+      "name": "content-standard",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about.html",
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins.html",
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins/CVI-treatment-options.html",
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins/Living-with-CVI.html",
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins/What-is-CVI.html",
+        "https://www.medtronic.com/kr-ko/our-company.html",
+        "https://www.medtronic.com/kr-ko/our-company/careers.html",
+        "https://www.medtronic.com/kr-ko/our-company/careers/culture.html",
+        "https://www.medtronic.com/kr-ko/our-company/careers/engineering.html",
+        "https://www.medtronic.com/kr-ko/our-company/key-facts.html",
+        "https://www.medtronic.com/kr-ko/our-company/korea.html",
+        "https://www.medtronic.com/kr-ko/our-impact.html",
+        "https://www.medtronic.com/kr-ko/our-impact/health-equity.html",
+        "https://www.medtronic.com/kr-ko/our-impact/impact-reporting.html",
+        "https://www.medtronic.com/kr-ko/our-impact/inclusion-diversity-equity.html",
+        "https://www.medtronic.com/kr-ko/our-impact/protecting-our-planet.html"
+      ],
+      "coverageGaps": [],
+      "description": "Standard content page: title band plus vertically stacked prose and image/text sections",
+      "blocks": []
+    },
+    {
+      "name": "section-listing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news.html",
+        "https://www.medtronic.com/kr-ko/our-company/mission.html",
+        "https://www.medtronic.com/kr-ko/our-company/press.html"
+      ],
+      "coverageGaps": [],
+      "description": "Listing/index page: intro then a grid or list of child links",
+      "blocks": []
+    },
+    {
+      "name": "news-article",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-170427111121.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-190520.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-190705.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-190729.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-190828.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-191112.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-200813.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-201104.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-201209.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-210727.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-211109.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-220207.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-221219.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-230407.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-230502.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-240222.html"
+      ],
+      "coverageGaps": [],
+      "description": "News article: heading, date, body copy and inline media in a single column",
+      "blocks": []
+    },
+    {
+      "name": "news-article-quote",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-220111.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-221207.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-240226.html"
+      ],
+      "coverageGaps": [],
+      "description": "News article variant with pull-quote / callout sections",
+      "blocks": []
+    },
+    {
+      "name": "news-article-compact",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-220513.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-220901.html"
+      ],
+      "coverageGaps": [],
+      "description": "Compact news article with short body and single image",
+      "blocks": []
+    },
+    {
+      "name": "news-article-media",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-221101.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-221109.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-221111.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-221201.html"
+      ],
+      "coverageGaps": [],
+      "description": "News article variant with prominent lead media and image gallery blocks",
+      "blocks": []
+    },
+    {
+      "name": "news-article-plain",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-22118.html"
+      ],
+      "coverageGaps": [],
+      "description": "Minimal news article, text only",
+      "blocks": []
+    },
+    {
+      "name": "news-article-embed",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-231012.html"
+      ],
+      "coverageGaps": [],
+      "description": "News article with embedded media block",
+      "blocks": []
+    },
+    {
+      "name": "news-article-list",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-240425.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-240429.html"
+      ],
+      "coverageGaps": [],
+      "description": "News article with bulleted list content sections",
+      "blocks": []
+    },
+    {
+      "name": "news-article-linkout",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/news/news-240516.html",
+        "https://www.medtronic.com/kr-ko/about/news/news-240619.html"
+      ],
+      "coverageGaps": [],
+      "description": "News article ending in outbound link/CTA block",
+      "blocks": []
+    },
+    {
+      "name": "link-list-page",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/about/notice.html",
+        "https://www.medtronic.com/kr-ko/our-company/locations.html",
+        "https://www.medtronic.com/kr-ko/our-company/notice.html"
+      ],
+      "coverageGaps": [],
+      "description": "Page composed mainly of grouped link lists (notice, locations)",
+      "blocks": []
+    },
+    {
+      "name": "faq-accordion",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins/CVI-frequently-asked-questions.html",
+        "https://www.medtronic.com/kr-ko/our-company/history.html",
+        "https://www.medtronic.com/kr-ko/our-company/korea/medtronic-innovation-center.html",
+        "https://www.medtronic.com/kr-ko/our-company/leadership.html",
+        "https://www.medtronic.com/kr-ko/our-impact/communities.html",
+        "https://www.medtronic.com/kr-ko/our-impact/environmental-action-group.html",
+        "https://www.medtronic.com/kr-ko/our-impact/renewable-energy.html"
+      ],
+      "coverageGaps": [],
+      "description": "Long-form content page with FAQ/accordion-style expandable sections",
+      "blocks": []
+    },
+    {
+      "name": "treatment-option-detail",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins/CVI-treatment-options/Discover-Cyanoacrylate-Ablation.html"
+      ],
+      "coverageGaps": [],
+      "description": "Treatment option detail page: hero, description, media",
+      "blocks": []
+    },
+    {
+      "name": "treatment-option-detail-b",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/CVI-Varicose-Veins/CVI-treatment-options/Thermal-Ablation.html"
+      ],
+      "coverageGaps": [],
+      "description": "Treatment option detail variant with step sections",
+      "blocks": []
+    },
+    {
+      "name": "campaign-info",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/bradycardia-en/frequently-asked-questions.html",
+        "https://www.medtronic.com/kr-ko/c/bradycardia-en/what-is-bradycardia.html",
+        "https://www.medtronic.com/kr-ko/c/bradycardia-kr/frequently-asked-questions.html",
+        "https://www.medtronic.com/kr-ko/c/bradycardia-kr/micra-leadless-pacemakers-for-bradycardia.html",
+        "https://www.medtronic.com/kr-ko/c/bradycardia-kr/understanding-pacemakers.html",
+        "https://www.medtronic.com/kr-ko/c/bradycardia-kr/what-is-bradycardia.html"
+      ],
+      "coverageGaps": [],
+      "description": "Campaign sub-page: hero plus informational content sections",
+      "blocks": []
+    },
+    {
+      "name": "campaign-landing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/bradycardia-kr.html"
+      ],
+      "coverageGaps": [],
+      "description": "Campaign landing hub linking to sub-pages",
+      "blocks": []
+    },
+    {
+      "name": "estore-landing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/estore.html"
+      ],
+      "coverageGaps": [],
+      "description": "Single-purpose landing page with prominent CTA panel",
+      "blocks": []
+    },
+    {
+      "name": "campaign-product",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/inpact-av-drug-coated-balloon-kr.html",
+        "https://www.medtronic.com/kr-ko/c/inpact-av-drug-coated-balloon.html"
+      ],
+      "coverageGaps": [],
+      "description": "Campaign product landing: hero, product highlights, CTA",
+      "blocks": []
+    },
+    {
+      "name": "partner-landing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/spine-business-partner.html"
+      ],
+      "coverageGaps": [],
+      "description": "Partner/business landing page, hero plus text",
+      "blocks": []
+    },
+    {
+      "name": "campaign-promo",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/c/venaseal-closure-system-campaign-kr.html",
+        "https://www.medtronic.com/kr-ko/c/venaseal-closure-system-campaign.html"
+      ],
+      "coverageGaps": [],
+      "description": "Campaign promo landing with promotional banner sections",
+      "blocks": []
+    },
+    {
+      "name": "hcp-landing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/healthcare-professionals.html"
+      ],
+      "coverageGaps": [],
+      "description": "Healthcare professionals landing page: hero plus link grid",
+      "blocks": []
+    },
+    {
+      "name": "hero-landing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/index.html",
+        "https://www.medtronic.com/kr-ko/our-company/careers/inclusion-diversity.html",
+        "https://www.medtronic.com/kr-ko/our-company/leadership/geoff-martha.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2024-10-evolut-showcase-encore-seoul.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2024-12-robotic-surgery-research-training-center-opening.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2025-08-medtronic-korea-estore-launch.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2025-09-medtronic-korea-micra-av-10th-anniversary.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-01-medtronic-korea-kanghui-launch.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-01-medtronic-korea-remote-sales-channel.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-02-medtronic-korea-great-place-to-work.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-02-medtronic-korea-hugo-ligasure-ras-lanuch.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-03-medtronic-korea-evolut-fx-plus-release.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-03-medtronic-korea-micra2-launch.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-04-medtronic-korea-hugo-chh-partership.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-05-medtronic-korea-hugo-amc-partnership.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-06-medtronic-korea-venaseal-rebranding.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/2026-08-medtronic-korea-simplera-launch.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/best-workplace-award.html"
+      ],
+      "coverageGaps": [],
+      "description": "Hero banner at top followed by stacked content/feature sections; homepage and top-level overview pages",
+      "blocks": []
+    },
+    {
+      "name": "press-release",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/our-company/press/drug-eluting-balloon-cathether.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/hugo-robotic-surgery.html",
+        "https://www.medtronic.com/kr-ko/our-company/press/spine-partnership.html"
+      ],
+      "coverageGaps": [],
+      "description": "Press release: heading, dateline, body copy, boilerplate footer",
+      "blocks": []
+    },
+    {
+      "name": "category-listing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies.html"
+      ],
+      "coverageGaps": [],
+      "description": "Category listing page: intro then grid of category cards",
+      "blocks": []
+    },
+    {
+      "name": "condition-detail",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity/go-to-surgeon.html",
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity/risk-of-obesity.html",
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity/understanding.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/aortic.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/aortic/faq.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/aortic/symptom.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/aortic/video.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/reveal_linq.html"
+      ],
+      "coverageGaps": [],
+      "description": "Patient condition detail: hero, explanatory sections, media",
+      "blocks": []
+    },
+    {
+      "name": "condition-overview",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity.html"
+      ],
+      "coverageGaps": [],
+      "description": "Condition overview landing with intro and child links",
+      "blocks": []
+    },
+    {
+      "name": "condition-treatment",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity/information.html",
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity/treatment.html"
+      ],
+      "coverageGaps": [],
+      "description": "Condition treatment page: description plus treatment option sections",
+      "blocks": []
+    },
+    {
+      "name": "condition-faq",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/obesity/question.html"
+      ],
+      "coverageGaps": [],
+      "description": "Condition Q&A page with question/answer sections",
+      "blocks": []
+    },
+    {
+      "name": "condition-overview-b",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/sca.html"
+      ],
+      "coverageGaps": [],
+      "description": "Condition overview variant with hero image band",
+      "blocks": []
+    },
+    {
+      "name": "condition-faq-b",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/sca/patientsfaq.html"
+      ],
+      "coverageGaps": [],
+      "description": "Condition FAQ variant, single-column Q&A",
+      "blocks": []
+    },
+    {
+      "name": "condition-symptoms",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/conditions/sca/symptoms.html"
+      ],
+      "coverageGaps": [],
+      "description": "Condition symptoms page with list and media sections",
+      "blocks": []
+    },
+    {
+      "name": "patients-landing",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients.html"
+      ],
+      "coverageGaps": [],
+      "description": "Patients section landing page: hero plus category links",
+      "blocks": []
+    },
+    {
+      "name": "treatment-detail",
+      "urls": [
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/aortic/evolut_system.html",
+        "https://www.medtronic.com/kr-ko/patients/treatments-therapies/aortic/tavi.html"
+      ],
+      "coverageGaps": [],
+      "description": "Treatment/therapy detail page: hero, description, product media",
+      "blocks": []
+    }
+  ]
+}

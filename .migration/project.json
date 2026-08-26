@@ -2,6 +2,7 @@
   "type": "xwalk",
   "sites": {
     "eds-xwalk-medtronic": {
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
       "previewOrg": "pradeepgupta-eds",
       "previewSite": "eds-xwalk-medtronic",
       "contentHostUrl": "author-p25321-e1006616.adobeaemcloud.com",
@@ -9,7 +10,7 @@
       "aemAssetsFolderPath": "/content/dam/eds-xwalk-medtronic",
       "aemSiteName": "eds-xwalk-medtronic",
       "aemSiteTitle": "eds-xwalk-medtronic",
-      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+      "baseUrl": "https://www.medtronic.com"
     }
   }
 }

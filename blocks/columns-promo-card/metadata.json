@@ -34,9 +34,10 @@
     "pagesUsing": [
       "/en-us/our-company",
       "/en-us/our-impact",
-      "/en-us/our-impact/impact-reporting"
+      "/en-us/our-impact/impact-reporting",
+      "/kr-ko/index"
     ],
-    "reuseCount": 3,
-    "lastUsed": "2026-08-20T18:18:00.000Z"
+    "reuseCount": 4,
+    "lastUsed": "2026-08-26T00:00:00.000Z"
   }
 }
