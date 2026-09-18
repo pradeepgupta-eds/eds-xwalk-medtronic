@@ -17,7 +17,7 @@
 }
 
 .columns-stats.block .columns-stats-text p {
-  max-width: 320px;
+  max-width: 304px;
   margin: 0 0 20px;
   color: #fff;
   font-size: 20px;
@@ -64,9 +64,10 @@ main .columns-stats.block .columns-stats-text a.button:any-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: rgb(74 125 255);
+  color: rgb(16 16 235);
   font-size: 20px;
   font-weight: 500;
+  line-height: 32px;
   text-decoration: none;
 }
 
@@ -83,9 +84,9 @@ main .columns-stats.block .columns-stats-keyfacts a.button:any-link {
 .columns-stats.block .columns-stats-text a:any-link::after {
   content: "";
   display: inline-block;
-  width: 28px;
-  height: 28px;
-  background-color: rgb(74 125 255);
+  width: 32px;
+  height: 32px;
+  background-color: rgb(16 16 235);
   border-radius: 50%;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>');
   background-repeat: no-repeat;
@@ -94,7 +95,7 @@ main .columns-stats.block .columns-stats-keyfacts a.button:any-link {
 }
 
 main .columns-stats.block .columns-stats-text a:any-link:hover {
-  color: rgb(74 125 255);
+  color: rgb(16 16 235);
   text-decoration: none;
 }
 
@@ -119,9 +120,10 @@ main .columns-stats.block .columns-stats-text a:any-link:hover {
 .columns-stats.block .columns-stats-info-bar {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  padding: 16px 10px;
-  background-color: #170f5f;
+  gap: 4px;
+  padding: 10px 6px;
+  background-color: rgb(12 12 165 / 60%);
+  border-radius: 10px;
 }
 
 .columns-stats.block .columns-stats-info-block {
@@ -130,13 +132,13 @@ main .columns-stats.block .columns-stats-text a:any-link:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 10px 2px;
   text-align: center;
 }
 
 .columns-stats.block .columns-stats-number {
   color: #fff;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 200;
   line-height: 1.2;
 }
@@ -187,5 +189,11 @@ main .columns-stats.block .columns-stats-text a:any-link:hover {
     margin-top: -66px;
     margin-left: auto;
     width: 84%;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .columns-stats.block .columns-stats-info-block {
+    padding: 10px;
   }
 }

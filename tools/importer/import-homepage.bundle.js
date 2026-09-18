@@ -136,7 +136,27 @@ var CustomImportScript = (() => {
       return;
     }
     const block = WebImporter.Blocks.createBlock(document2, { name: "carousel-news", cells });
-    element.replaceWith(block);
+    const headingWrap = element.querySelector(".news-media-sectionTarget");
+    const preface = document2.createDocumentFragment();
+    if (headingWrap) {
+      const eyebrow = headingWrap.querySelector(".eyebrow");
+      const headline = headingWrap.querySelector(".headline, h1, h2, h3");
+      if (eyebrow && eyebrow.textContent.trim()) {
+        const p = document2.createElement("p");
+        p.textContent = eyebrow.textContent.trim();
+        preface.appendChild(p);
+      }
+      if (headline && headline.textContent.trim()) {
+        const h = document2.createElement("h2");
+        h.textContent = headline.textContent.trim();
+        preface.appendChild(h);
+      }
+    }
+    if (preface.childNodes.length > 0) {
+      element.replaceWith(preface, block);
+    } else {
+      element.replaceWith(block);
+    }
   }
 
   // tools/importer/parsers/columns-stats.js
@@ -348,6 +368,35 @@ var CustomImportScript = (() => {
       WebImporter.DOMUtils.remove(element, ["div.share"]);
       WebImporter.DOMUtils.remove(element, ["div.warn-on-leave"]);
       WebImporter.DOMUtils.remove(element, ["div.xfpage"]);
+      WebImporter.DOMUtils.remove(element, [
+        '[id^="subnav-"]',
+        ".quicklinks",
+        ".quicklinks-subnav",
+        ".mdt-subnav",
+        ".subnav"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        "#notification-container",
+        "#outdated",
+        "#search-overlay"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        ".addthis_outer",
+        ".addthis_toolbox",
+        ".open-share",
+        ".share-close-button"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        "#main-navigation",
+        ".fixed-header-main-nav",
+        ".nav-menu",
+        ".country-selector",
+        "#headerCountry",
+        ".select-country",
+        ".country-selection",
+        ".breadcrumbs",
+        ".breadcrumb"
+      ]);
     }
     if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [

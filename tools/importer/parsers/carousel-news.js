@@ -83,5 +83,29 @@ export default function parse(element, { document }) {
   }
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'carousel-news', cells });
-  element.replaceWith(block);
+
+  // Preserve the section heading ("THE LATEST" eyebrow + "Innovation in action"
+  // headline) that precedes the scroller as default content above the block.
+  const headingWrap = element.querySelector('.news-media-sectionTarget');
+  const preface = document.createDocumentFragment();
+  if (headingWrap) {
+    const eyebrow = headingWrap.querySelector('.eyebrow');
+    const headline = headingWrap.querySelector('.headline, h1, h2, h3');
+    if (eyebrow && eyebrow.textContent.trim()) {
+      const p = document.createElement('p');
+      p.textContent = eyebrow.textContent.trim();
+      preface.appendChild(p);
+    }
+    if (headline && headline.textContent.trim()) {
+      const h = document.createElement('h2');
+      h.textContent = headline.textContent.trim();
+      preface.appendChild(h);
+    }
+  }
+
+  if (preface.childNodes.length > 0) {
+    element.replaceWith(preface, block);
+  } else {
+    element.replaceWith(block);
+  }
 }

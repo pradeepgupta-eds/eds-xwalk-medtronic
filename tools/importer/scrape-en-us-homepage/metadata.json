@@ -1,0 +1,78 @@
+{
+  "url": "https://www.medtronic.com/en-us/index.html",
+  "timestamp": "2026-09-18T07:50:19.278Z",
+  "paths": {
+    "documentPath": "/en-us/index",
+    "htmlFilePath": "/en-us/index.plain.html",
+    "mdFilePath": "/en-us/index.md",
+    "dirPath": "/en-us",
+    "filename": "index"
+  },
+  "screenshot": "tools/importer/scrape-en-us-homepage/screenshot.png",
+  "html": {
+    "filePath": "tools/importer/scrape-en-us-homepage/cleaned.html",
+    "size": 5003914
+  },
+  "metadata": {
+    "title": "Health tech for the digital age | Medtronic",
+    "description": "People-centered, data-driven, personalized. Solving our world’s biggest health challenges with advanced technology.",
+    "viewport": "width=device-width, initial-scale=1",
+    "format-detection": "telephone=yes",
+    "ou-functions": "Functions",
+    "ou-functional-group_en": "Global communications and corporate marketing",
+    "page-type": "home-page",
+    "ou-function_en": "Corporate marketing, brand and sponsorship",
+    "page-type-translated": "home-page",
+    "ou-functions_en": "Functions",
+    "ou-functional-group": "Global communications and corporate marketing",
+    "ou-function": "Corporate marketing, brand and sponsorship",
+    "internal-title": " Health tech for the digital age",
+    "og:title": " Health tech for the digital age",
+    "og:description": "People-centered, data-driven, personalized. Solving our world’s biggest health challenges with advanced technology.",
+    "og:image": "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/medtronic-com/open-graph-default.png",
+    "og:type": "website",
+    "og:url": "https://www.medtronic.com/en-us/index.html",
+    "og:locale": "en_us",
+    "msapplication-TileColor": "#ffffff",
+    "msapplication-config": "/content/dam/medtronic-wide/public/channel-configuration/favicons/browserconfig.xml",
+    "theme-color": "#ffffff",
+    "ROBOTS": "INDEX,FOLLOW",
+    "canonical": "https://www.medtronic.com/en-us/index.html"
+  },
+  "images": {
+    "count": 23,
+    "mapping": {
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-openbook-ptlif.jpg": "./images/5250abfb9eaae5aa3a70e3f51e77ee89.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-hero-ras-cnpt.png": "./images/26575af08e575ceac6b54c381a9d91ef.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/laptop.svg": "./images/d8c37f0f80cc68d069091e891af25836.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/chart--stacked.svg": "./images/f7201a449160248a1ac0d4db585b92b8.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/group--security.svg": "./images/dc5b97abaaecc97fce768513bce96c97.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/event.svg": "./images/7a02bda673e291d17652a4ef5c8ffc6e.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/user--service-desk.svg": "./images/d749cd72928e7e15326acae61a8a4d86.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/user--settings.svg": "./images/0b5f08c40479937a27a208289a7c5aa5.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-aible-hplif.jpg": "./images/81b2eea860e035e647c43acaffdb6345.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-altaviva-h-hand.png": "./images/cc435d5533886e7313f7ab83d1d626c0.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/spent-on-supplier.gif": "./images/c0709768c125db8c493820653b5a9fb6.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/patients-reached.gif": "./images/4cfddf252612b58fd50b4d7a2ef97c3c.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/greenhouse-gas.gif": "./images/90f023358dc1c7ab72989928126d59f2.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-untapped-neuro-cnpt.jpg": "./images/e0ac5fa79fed50ad02999c2e237d6da1.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/hp-impact-mod-gradient-cnpt.jpg": "./images/e555be6eebdb165045a57892895b725d.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/hp-investors-cnpt.png": "./images/4898f95602760a9ec2a0d8a6cfd2ff0b.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-wild-docu.jpg": "./images/14d988e1844135880a0edba998dc74cd.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-spot-spark-scholars-cnpt.png": "./images/2f5be2083efdc81662a670d0c2f43302.png",
+      "https://cdn.cookielaw.org/logos/74306bdd-94de-443c-9589-2ebbc975a0be/4433fa59-565e-4547-8f55-b2dd5f908e80/d18e98ce-b1e6-41cd-8cab-04512edeffd6/art-logo-en-rgb-bl.png": "./images/d609fc30bcf79367dd9e187ef08e4beb.png",
+      "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg": "./images/a9584a367ebcccfac48987ce1fec5eae.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-healthy-neighbor-hplif.jpg": "./images/f20cfb50328829794801d05a32e9c56c.png",
+      "https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-car-untapped-surgical-hplif.jpg": "./images/3fb0361d5066c82b46f7c2567ad76dfe.png",
+      "https://www.medtronic.com/content/dam/medtronic-com/us-en/corporate/graphics/hp-careers-032026-lif.jpg": "./images/3dda02907e2ece54be6d984c3c20bb7a.png"
+    },
+    "stats": {
+      "total": 24,
+      "converted": 22,
+      "skipped": 1,
+      "failed": 1,
+      "tooLarge": 1,
+      "limitReached": 0
+    }
+  }
+}

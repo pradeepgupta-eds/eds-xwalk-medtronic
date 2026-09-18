@@ -198,7 +198,7 @@
 /* ---------- Icon quick-links (bottom-right on desktop) ---------- */
 .columns-promo-quicklinks {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 2px;
   margin: 24px 0 0;
   padding: 0;
@@ -206,7 +206,8 @@
 }
 
 .columns-promo-quicklinks li {
-  flex: 1 1 120px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
