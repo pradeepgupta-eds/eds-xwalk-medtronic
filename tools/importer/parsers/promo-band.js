@@ -86,12 +86,18 @@ export default function parse(element, { document }) {
     return;
   }
 
-  const cells = [['Promo Band']];
+  // Flat model (image, imageAlt, text) — one field per ROW (single cell),
+  // matching the working hero-video pattern so md2jcr maps content to the model.
+  const cells = [];
+  // Image row — mirror the working hero-video pattern exactly: hinted cell with
+  // the image when present, otherwise a plain empty cell (no field comment).
   if (img) {
-    cells.push([[img.cloneNode(true)], textCell]);
+    cells.push([[document.createComment(' field:image '), img.cloneNode(true)]]);
   } else {
-    cells.push([textCell, ['']]);
+    cells.push(['']);
   }
+  // Text row.
+  cells.push([[document.createComment(' field:text '), ...textCell]]);
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'promo-band', cells });
   element.replaceWith(block);

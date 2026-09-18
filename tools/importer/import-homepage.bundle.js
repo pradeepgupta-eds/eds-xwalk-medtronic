@@ -90,8 +90,55 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/carousel-news.js
+  // tools/importer/parsers/banner-patients.js
   function parse2(element, { document: document2 }) {
+    element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
+    element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
+    const banner = element.querySelector(".award-banner") || element;
+    const img = banner.querySelector('.award-banner__media img[src]:not([src^="data:"])') || banner.querySelector('img[src]:not([src^="data:"])');
+    const textWrap = banner.querySelector(".award-banner__text") || banner;
+    const eyebrow = textWrap.querySelector(".eyebrow");
+    const headline = textWrap.querySelector(".headline, h1, h2, h3, h4");
+    const cta = textWrap.querySelector("a.cta[href], a.link[href], a[href]");
+    const textCell = [];
+    if (eyebrow && eyebrow.textContent.trim()) {
+      const p = document2.createElement("p");
+      p.textContent = eyebrow.textContent.trim();
+      textCell.push(p);
+    }
+    if (headline && headline.textContent.trim()) {
+      const h = document2.createElement("h3");
+      h.textContent = headline.textContent.trim();
+      textCell.push(h);
+    }
+    if (cta && cta.getAttribute("href")) {
+      const link = cta.cloneNode(true);
+      link.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
+      const label = link.textContent.trim();
+      const a = document2.createElement("a");
+      a.setAttribute("href", cta.getAttribute("href"));
+      a.textContent = label || "Learn more";
+      const p = document2.createElement("p");
+      p.appendChild(a);
+      textCell.push(p);
+    }
+    if (!img && textCell.length === 0) {
+      element.replaceWith(...element.childNodes);
+      return;
+    }
+    const cells = [];
+    if (img) {
+      cells.push([[document2.createComment(" field:image "), img.cloneNode(true)]]);
+    } else {
+      cells.push([""]);
+    }
+    cells.push([[document2.createComment(" field:text "), ...textCell]]);
+    const block = WebImporter.Blocks.createBlock(document2, { name: "banner-patients", cells });
+    element.replaceWith(block);
+  }
+
+  // tools/importer/parsers/carousel-news.js
+  function parse3(element, { document: document2 }) {
     const scroller = element.querySelector(".scroller, #scroller") || (element.matches(".scroller, #scroller") ? element : element);
     const items = Array.from(scroller.querySelectorAll(".news-item"));
     const cells = [["Carousel News"]];
@@ -160,7 +207,7 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/stats-band.js
-  function parse3(element, { document: document2 }) {
+  function parse4(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const section = element.querySelector(".who-we-are-section") || element;
@@ -198,15 +245,15 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [
-      ["Stats Band"],
-      [leftCell, rightCell]
+      [[document2.createComment(" field:text "), ...leftCell]],
+      [[document2.createComment(" field:stats "), ...rightCell]]
     ];
     const block = WebImporter.Blocks.createBlock(document2, { name: "stats-band", cells });
     element.replaceWith(block);
   }
 
   // tools/importer/parsers/cta-band.js
-  function parse4(element, { document: document2 }) {
+  function parse5(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const banner = element.querySelector(".banner-container") || element;
@@ -225,15 +272,15 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [
-      ["Cta Band"],
-      [contentCell, ctaCell]
+      [[document2.createComment(" field:text "), ...contentCell]],
+      [[document2.createComment(" field:cta "), ...ctaCell]]
     ];
     const block = WebImporter.Blocks.createBlock(document2, { name: "cta-band", cells });
     element.replaceWith(block);
   }
 
   // tools/importer/parsers/impact-band.js
-  function parse5(element, { document: document2 }) {
+  function parse6(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const eyebrow = element.querySelector(".eyebrow");
@@ -250,18 +297,19 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const cells = [["Impact Band"]];
+    const cells = [];
     if (img) {
-      cells.push([[img.cloneNode(true)], textCell]);
+      cells.push([[document2.createComment(" field:image "), img.cloneNode(true)]]);
     } else {
-      cells.push([textCell, [""]]);
+      cells.push([""]);
     }
+    cells.push([[document2.createComment(" field:text "), ...textCell]]);
     const block = WebImporter.Blocks.createBlock(document2, { name: "impact-band", cells });
     element.replaceWith(block);
   }
 
   // tools/importer/parsers/cards-stats.js
-  function parse6(element, { document: document2 }) {
+  function parse7(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const img = element.querySelector('.animation-icon img, img[src]:not([src^="data:"])');
@@ -295,7 +343,7 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/promo-band.js
-  function parse7(element, { document: document2 }) {
+  function parse8(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const section = element.querySelector(".careers-section, .investors-section") || element;
@@ -344,12 +392,13 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const cells = [["Promo Band"]];
+    const cells = [];
     if (img) {
-      cells.push([[img.cloneNode(true)], textCell]);
+      cells.push([[document2.createComment(" field:image "), img.cloneNode(true)]]);
     } else {
-      cells.push([textCell, [""]]);
+      cells.push([""]);
     }
+    cells.push([[document2.createComment(" field:text "), ...textCell]]);
     const block = WebImporter.Blocks.createBlock(document2, { name: "promo-band", cells });
     element.replaceWith(block);
   }
@@ -458,12 +507,13 @@ var CustomImportScript = (() => {
   // tools/importer/import-homepage.js
   var parsers = {
     "hero-video": parse,
-    "carousel-news": parse2,
-    "stats-band": parse3,
-    "cta-band": parse4,
-    "impact-band": parse5,
-    "cards-stats": parse6,
-    "promo-band": parse7
+    "banner-patients": parse2,
+    "carousel-news": parse3,
+    "stats-band": parse4,
+    "cta-band": parse5,
+    "impact-band": parse6,
+    "cards-stats": parse7,
+    "promo-band": parse8
   };
   var PAGE_TEMPLATE = {
     name: "homepage",
@@ -482,6 +532,7 @@ var CustomImportScript = (() => {
     ],
     blocks: [
       { name: "hero-video", instances: ["div.hero-main-content", "#Header-video"] },
+      { name: "banner-patients", instances: ["#hero-banner-patients", "div.award-banner-wrapper"] },
       { name: "carousel-news", instances: ["#News-Media", "#scroller"] },
       { name: "stats-band", instances: ["#who-we-are"] },
       { name: "cta-band", instances: ["div.wrapper-cta-banner"] },

@@ -65,9 +65,11 @@ export default function parse(element, { document }) {
     return;
   }
 
+  // Flat model (text, stats) — one field per ROW (single cell), matching the
+  // working hero-video pattern so md2jcr maps content into the JCR model.
   const cells = [
-    ['Stats Band'],
-    [leftCell, rightCell],
+    [[document.createComment(' field:text '), ...leftCell]],
+    [[document.createComment(' field:stats '), ...rightCell]],
   ];
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'stats-band', cells });

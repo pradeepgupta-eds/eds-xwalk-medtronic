@@ -42,9 +42,11 @@ export default function parse(element, { document }) {
     return;
   }
 
+  // Flat model (text, cta) — one field per ROW (single cell), matching the
+  // working hero-video pattern so md2jcr maps content into the JCR model.
   const cells = [
-    ['Cta Band'],
-    [contentCell, ctaCell],
+    [[document.createComment(' field:text '), ...contentCell]],
+    [[document.createComment(' field:cta '), ...ctaCell]],
   ];
 
   const block = WebImporter.Blocks.createBlock(document, { name: 'cta-band', cells });

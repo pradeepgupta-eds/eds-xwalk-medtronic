@@ -1,0 +1,36 @@
+{
+  "variantName": "banner-patients",
+  "baseBlock": "block",
+  "version": "1.0.0",
+  "created": "2026-09-18T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.medtronic.com/en-us/index.html",
+    "originPage": "Medtronic corporate homepage",
+    "blockPosition": "below hero"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "promo-banner",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "horizontal banner card: collage image left + eyebrow/headline/CTA right",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "full-width promotional banner with image on one side and heading + CTA on the other"
+    ],
+    "notSuitableFor": [
+      "multi-column content grids",
+      "hero banners with background media"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en-us/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-18T00:00:00.000Z"
+  }
+}

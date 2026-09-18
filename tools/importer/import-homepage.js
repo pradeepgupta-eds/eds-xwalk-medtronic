@@ -3,6 +3,7 @@
 
 // PARSER IMPORTS
 import heroVideoParser from './parsers/hero-video.js';
+import bannerPatientsParser from './parsers/banner-patients.js';
 import carouselNewsParser from './parsers/carousel-news.js';
 import statsBandParser from './parsers/stats-band.js';
 import ctaBandParser from './parsers/cta-band.js';
@@ -17,6 +18,7 @@ import sectionsTransformer from './transformers/medtronic-sections.js';
 // PARSER REGISTRY
 const parsers = {
   'hero-video': heroVideoParser,
+  'banner-patients': bannerPatientsParser,
   'carousel-news': carouselNewsParser,
   'stats-band': statsBandParser,
   'cta-band': ctaBandParser,
@@ -43,6 +45,7 @@ const PAGE_TEMPLATE = {
   ],
   blocks: [
     { name: 'hero-video', instances: ['div.hero-main-content', '#Header-video'] },
+    { name: 'banner-patients', instances: ['#hero-banner-patients', 'div.award-banner-wrapper'] },
     { name: 'carousel-news', instances: ['#News-Media', '#scroller'] },
     { name: 'stats-band', instances: ['#who-we-are'] },
     { name: 'cta-band', instances: ['div.wrapper-cta-banner'] },

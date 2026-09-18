@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Impact Band",
-      "id": "impact-band",
+      "title": "Banner Patients",
+      "id": "banner-patients",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Impact Band",
-              "model": "impact-band"
+              "name": "Banner Patients",
+              "model": "banner-patients"
             }
           }
         }
@@ -18,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "impact-band",
+      "id": "banner-patients",
       "fields": [
         {
           "component": "reference",

@@ -170,41 +170,5 @@
       "button",
       "title"
     ]
-  },
-  {
-    "id": "cta-band",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "impact-band",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "promo-band",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "stats-band",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
   }
 ]
