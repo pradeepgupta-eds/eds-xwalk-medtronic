@@ -170,5 +170,11 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "promo-band",
+    "components": [
+      "promo-link"
+    ]
   }
 ]

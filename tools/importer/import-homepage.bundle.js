@@ -349,7 +349,7 @@ var CustomImportScript = (() => {
     const section = element.querySelector(".careers-section, .investors-section") || element;
     const content = section.querySelector(".careers-content, .investors-content") || section;
     const img = section.querySelector('img[src]:not([src^="data:"])');
-    const textCell = [];
+    const textCell = [document2.createComment(" field:text ")];
     const eyebrow = content.querySelector(".eyebrow");
     const title = content.querySelector(".careers-title, .investors-title, h1, h2, h3, .headline");
     const description = content.querySelector(".careers-description, .investors-description, .copy, p");
@@ -357,38 +357,26 @@ var CustomImportScript = (() => {
     if (title) textCell.push(title.cloneNode(true));
     if (description) textCell.push(description.cloneNode(true));
     const seen = /* @__PURE__ */ new Set();
-    content.querySelectorAll(".cta a[href], .careers-links a[href], a.link[href], .bottom-right-link[href]").forEach((a) => {
-      const href = a.getAttribute("href");
-      const text = a.textContent.trim();
-      if (!text || !href) return;
-      if (seen.has(href)) return;
-      seen.add(href);
-      const link = a.cloneNode(true);
-      link.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
-      const p = document2.createElement("p");
-      p.appendChild(link);
-      textCell.push(p);
-    });
-    content.querySelectorAll(".careers-jobs a[href]").forEach((a) => {
-      const href = a.getAttribute("href");
-      if (!href || seen.has(href)) return;
-      seen.add(href);
-      const p = document2.createElement("p");
-      p.appendChild(a.cloneNode(true));
-      textCell.push(p);
-    });
-    section.querySelectorAll("a[href]").forEach((a) => {
+    const iconLinks = [];
+    const classify = (a) => {
       const href = a.getAttribute("href");
       const text = a.textContent.trim();
       if (!text || !href || seen.has(href)) return;
       seen.add(href);
-      const link = a.cloneNode(true);
-      link.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
-      const p = document2.createElement("p");
-      p.appendChild(link);
-      textCell.push(p);
-    });
-    if (!img && textCell.length === 0) {
+      const clone = a.cloneNode(true);
+      const hasIcon = clone.querySelector('img:not([src^="data:"]), picture');
+      if (hasIcon) {
+        iconLinks.push(clone);
+      } else {
+        const p = document2.createElement("p");
+        p.appendChild(clone);
+        textCell.push(p);
+      }
+    };
+    content.querySelectorAll(".cta a[href], .careers-links a[href], a.link[href], .bottom-right-link[href]").forEach(classify);
+    content.querySelectorAll(".careers-jobs a[href]").forEach(classify);
+    section.querySelectorAll("a[href]").forEach(classify);
+    if (!img && textCell.length === 1 && iconLinks.length === 0) {
       element.replaceWith(...element.childNodes);
       return;
     }
@@ -398,7 +386,20 @@ var CustomImportScript = (() => {
     } else {
       cells.push([""]);
     }
-    cells.push([[document2.createComment(" field:text "), ...textCell]]);
+    cells.push([textCell]);
+    iconLinks.forEach((a) => {
+      const icon = a.querySelector('img:not([src^="data:"])');
+      const iconCell = [document2.createComment(" field:image ")];
+      if (icon) iconCell.push(icon.cloneNode(true));
+      const linkAnchor = a.cloneNode(true);
+      linkAnchor.querySelectorAll("img, picture").forEach((n) => n.remove());
+      const label = linkAnchor.textContent.trim();
+      linkAnchor.textContent = label;
+      const linkP = document2.createElement("p");
+      linkP.appendChild(linkAnchor);
+      const linkCell = [document2.createComment(" field:link "), linkP];
+      cells.push([iconCell, linkCell]);
+    });
     const block = WebImporter.Blocks.createBlock(document2, { name: "promo-band", cells });
     element.replaceWith(block);
   }
