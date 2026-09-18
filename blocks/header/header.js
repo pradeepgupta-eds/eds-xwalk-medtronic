@@ -115,11 +115,12 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  let navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  // This xwalk project stores authored content under /content, so prefer the
+  // project-local nav fragment first; fall back to the metadata/root path.
+  let navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
   let fragment = await loadFragment(navPath);
-  // fallback: content served under /content in this project
   if (!fragment || !fragment.firstElementChild) {
-    navPath = '/content/nav';
+    navPath = '/nav';
     fragment = await loadFragment(navPath);
   }
 
@@ -140,6 +141,35 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
+  }
+
+  // Search widget (visual-only) — "Search within" audience dropdown + input + button,
+  // mirroring the live Medtronic header. Inserted between brand and sections.
+  const search = document.createElement('div');
+  search.className = 'nav-search';
+  search.innerHTML = `
+    <form class="nav-search-form" role="search" action="/en-us/search.html" onsubmit="return false;">
+      <label class="nav-search-select-wrap">
+        <select class="nav-search-select" aria-label="Search within">
+          <option>Search within</option>
+          <option>Healthcare professionals</option>
+          <option>Patients</option>
+          <option>Career seekers</option>
+        </select>
+      </label>
+      <input class="nav-search-input" type="search" placeholder="Search Medtronic" aria-label="Search Medtronic">
+      <button class="nav-search-button" type="submit" aria-label="Search">
+        <span class="nav-search-icon"></span>
+      </button>
+    </form>`;
+  navBrand.after(search);
+
+  // Tag utility tools (education icon + country/region selector) built from the
+  // third nav fragment column.
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    navTools.querySelector('.nav-tools-academy')?.closest('li')?.classList.add('nav-tools-academy-item');
+    navTools.querySelector('.nav-tools-region')?.closest('li')?.classList.add('nav-tools-region-item');
   }
 
   const navSections = nav.querySelector('.nav-sections');

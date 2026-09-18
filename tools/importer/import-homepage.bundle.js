@@ -90,8 +90,55 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/carousel-news.js
+  // tools/importer/parsers/banner-patients.js
   function parse2(element, { document: document2 }) {
+    element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
+    element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
+    const banner = element.querySelector(".award-banner") || element;
+    const img = banner.querySelector('.award-banner__media img[src]:not([src^="data:"])') || banner.querySelector('img[src]:not([src^="data:"])');
+    const textWrap = banner.querySelector(".award-banner__text") || banner;
+    const eyebrow = textWrap.querySelector(".eyebrow");
+    const headline = textWrap.querySelector(".headline, h1, h2, h3, h4");
+    const cta = textWrap.querySelector("a.cta[href], a.link[href], a[href]");
+    const textCell = [];
+    if (eyebrow && eyebrow.textContent.trim()) {
+      const p = document2.createElement("p");
+      p.textContent = eyebrow.textContent.trim();
+      textCell.push(p);
+    }
+    if (headline && headline.textContent.trim()) {
+      const h = document2.createElement("h3");
+      h.textContent = headline.textContent.trim();
+      textCell.push(h);
+    }
+    if (cta && cta.getAttribute("href")) {
+      const link = cta.cloneNode(true);
+      link.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
+      const label = link.textContent.trim();
+      const a = document2.createElement("a");
+      a.setAttribute("href", cta.getAttribute("href"));
+      a.textContent = label || "Learn more";
+      const p = document2.createElement("p");
+      p.appendChild(a);
+      textCell.push(p);
+    }
+    if (!img && textCell.length === 0) {
+      element.replaceWith(...element.childNodes);
+      return;
+    }
+    const cells = [];
+    if (img) {
+      cells.push([[document2.createComment(" field:image "), img.cloneNode(true)]]);
+    } else {
+      cells.push([""]);
+    }
+    cells.push([[document2.createComment(" field:text "), ...textCell]]);
+    const block = WebImporter.Blocks.createBlock(document2, { name: "banner-patients", cells });
+    element.replaceWith(block);
+  }
+
+  // tools/importer/parsers/carousel-news.js
+  function parse3(element, { document: document2 }) {
     const scroller = element.querySelector(".scroller, #scroller") || (element.matches(".scroller, #scroller") ? element : element);
     const items = Array.from(scroller.querySelectorAll(".news-item"));
     const cells = [["Carousel News"]];
@@ -136,11 +183,31 @@ var CustomImportScript = (() => {
       return;
     }
     const block = WebImporter.Blocks.createBlock(document2, { name: "carousel-news", cells });
-    element.replaceWith(block);
+    const headingWrap = element.querySelector(".news-media-sectionTarget");
+    const preface = document2.createDocumentFragment();
+    if (headingWrap) {
+      const eyebrow = headingWrap.querySelector(".eyebrow");
+      const headline = headingWrap.querySelector(".headline, h1, h2, h3");
+      if (eyebrow && eyebrow.textContent.trim()) {
+        const p = document2.createElement("p");
+        p.textContent = eyebrow.textContent.trim();
+        preface.appendChild(p);
+      }
+      if (headline && headline.textContent.trim()) {
+        const h = document2.createElement("h2");
+        h.textContent = headline.textContent.trim();
+        preface.appendChild(h);
+      }
+    }
+    if (preface.childNodes.length > 0) {
+      element.replaceWith(preface, block);
+    } else {
+      element.replaceWith(block);
+    }
   }
 
-  // tools/importer/parsers/columns-stats.js
-  function parse3(element, { document: document2 }) {
+  // tools/importer/parsers/stats-band.js
+  function parse4(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const section = element.querySelector(".who-we-are-section") || element;
@@ -178,15 +245,15 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [
-      ["Columns Stats"],
-      [leftCell, rightCell]
+      [[document2.createComment(" field:text "), ...leftCell]],
+      [[document2.createComment(" field:stats "), ...rightCell]]
     ];
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-stats", cells });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "stats-band", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-cta.js
-  function parse4(element, { document: document2 }) {
+  // tools/importer/parsers/cta-band.js
+  function parse5(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const banner = element.querySelector(".banner-container") || element;
@@ -205,15 +272,15 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [
-      ["Columns Cta"],
-      [contentCell, ctaCell]
+      [[document2.createComment(" field:text "), ...contentCell]],
+      [[document2.createComment(" field:cta "), ...ctaCell]]
     ];
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-cta", cells });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "cta-band", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-impact.js
-  function parse5(element, { document: document2 }) {
+  // tools/importer/parsers/impact-band.js
+  function parse6(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const eyebrow = element.querySelector(".eyebrow");
@@ -230,18 +297,19 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const cells = [["Columns Impact"]];
+    const cells = [];
     if (img) {
-      cells.push([[img.cloneNode(true)], textCell]);
+      cells.push([[document2.createComment(" field:image "), img.cloneNode(true)]]);
     } else {
-      cells.push([textCell, [""]]);
+      cells.push([""]);
     }
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-impact", cells });
+    cells.push([[document2.createComment(" field:text "), ...textCell]]);
+    const block = WebImporter.Blocks.createBlock(document2, { name: "impact-band", cells });
     element.replaceWith(block);
   }
 
   // tools/importer/parsers/cards-stats.js
-  function parse6(element, { document: document2 }) {
+  function parse7(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const img = element.querySelector('.animation-icon img, img[src]:not([src^="data:"])');
@@ -274,14 +342,14 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-promo.js
-  function parse7(element, { document: document2 }) {
+  // tools/importer/parsers/promo-band.js
+  function parse8(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
     const section = element.querySelector(".careers-section, .investors-section") || element;
     const content = section.querySelector(".careers-content, .investors-content") || section;
     const img = section.querySelector('img[src]:not([src^="data:"])');
-    const textCell = [];
+    const textCell = [document2.createComment(" field:text ")];
     const eyebrow = content.querySelector(".eyebrow");
     const title = content.querySelector(".careers-title, .investors-title, h1, h2, h3, .headline");
     const description = content.querySelector(".careers-description, .investors-description, .copy, p");
@@ -289,48 +357,50 @@ var CustomImportScript = (() => {
     if (title) textCell.push(title.cloneNode(true));
     if (description) textCell.push(description.cloneNode(true));
     const seen = /* @__PURE__ */ new Set();
-    content.querySelectorAll(".cta a[href], .careers-links a[href], a.link[href], .bottom-right-link[href]").forEach((a) => {
-      const href = a.getAttribute("href");
-      const text = a.textContent.trim();
-      if (!text || !href) return;
-      if (seen.has(href)) return;
-      seen.add(href);
-      const link = a.cloneNode(true);
-      link.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
-      const p = document2.createElement("p");
-      p.appendChild(link);
-      textCell.push(p);
-    });
-    content.querySelectorAll(".careers-jobs a[href]").forEach((a) => {
-      const href = a.getAttribute("href");
-      if (!href || seen.has(href)) return;
-      seen.add(href);
-      const p = document2.createElement("p");
-      p.appendChild(a.cloneNode(true));
-      textCell.push(p);
-    });
-    section.querySelectorAll("a[href]").forEach((a) => {
+    const iconLinks = [];
+    const classify = (a) => {
       const href = a.getAttribute("href");
       const text = a.textContent.trim();
       if (!text || !href || seen.has(href)) return;
       seen.add(href);
-      const link = a.cloneNode(true);
-      link.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
-      const p = document2.createElement("p");
-      p.appendChild(link);
-      textCell.push(p);
-    });
-    if (!img && textCell.length === 0) {
+      const clone = a.cloneNode(true);
+      const hasIcon = clone.querySelector('img:not([src^="data:"]), picture');
+      if (hasIcon) {
+        iconLinks.push(clone);
+      } else {
+        const p = document2.createElement("p");
+        p.appendChild(clone);
+        textCell.push(p);
+      }
+    };
+    content.querySelectorAll(".cta a[href], .careers-links a[href], a.link[href], .bottom-right-link[href]").forEach(classify);
+    content.querySelectorAll(".careers-jobs a[href]").forEach(classify);
+    section.querySelectorAll("a[href]").forEach(classify);
+    if (!img && textCell.length === 1 && iconLinks.length === 0) {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const cells = [["Columns Promo"]];
+    const cells = [];
     if (img) {
-      cells.push([[img.cloneNode(true)], textCell]);
+      cells.push([[document2.createComment(" field:image "), img.cloneNode(true)]]);
     } else {
-      cells.push([textCell, [""]]);
+      cells.push([""]);
     }
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-promo", cells });
+    cells.push([textCell]);
+    iconLinks.forEach((a) => {
+      const icon = a.querySelector('img:not([src^="data:"])');
+      const iconCell = [document2.createComment(" field:image ")];
+      if (icon) iconCell.push(icon.cloneNode(true));
+      const linkAnchor = a.cloneNode(true);
+      linkAnchor.querySelectorAll("img, picture").forEach((n) => n.remove());
+      const label = linkAnchor.textContent.trim();
+      linkAnchor.textContent = label;
+      const linkP = document2.createElement("p");
+      linkP.appendChild(linkAnchor);
+      const linkCell = [document2.createComment(" field:link "), linkP];
+      cells.push([iconCell, linkCell]);
+    });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "promo-band", cells });
     element.replaceWith(block);
   }
 
@@ -348,6 +418,35 @@ var CustomImportScript = (() => {
       WebImporter.DOMUtils.remove(element, ["div.share"]);
       WebImporter.DOMUtils.remove(element, ["div.warn-on-leave"]);
       WebImporter.DOMUtils.remove(element, ["div.xfpage"]);
+      WebImporter.DOMUtils.remove(element, [
+        '[id^="subnav-"]',
+        ".quicklinks",
+        ".quicklinks-subnav",
+        ".mdt-subnav",
+        ".subnav"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        "#notification-container",
+        "#outdated",
+        "#search-overlay"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        ".addthis_outer",
+        ".addthis_toolbox",
+        ".open-share",
+        ".share-close-button"
+      ]);
+      WebImporter.DOMUtils.remove(element, [
+        "#main-navigation",
+        ".fixed-header-main-nav",
+        ".nav-menu",
+        ".country-selector",
+        "#headerCountry",
+        ".select-country",
+        ".country-selection",
+        ".breadcrumbs",
+        ".breadcrumb"
+      ]);
     }
     if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [
@@ -409,12 +508,13 @@ var CustomImportScript = (() => {
   // tools/importer/import-homepage.js
   var parsers = {
     "hero-video": parse,
-    "carousel-news": parse2,
-    "columns-stats": parse3,
-    "columns-cta": parse4,
-    "columns-impact": parse5,
-    "cards-stats": parse6,
-    "columns-promo": parse7
+    "banner-patients": parse2,
+    "carousel-news": parse3,
+    "stats-band": parse4,
+    "cta-band": parse5,
+    "impact-band": parse6,
+    "cards-stats": parse7,
+    "promo-band": parse8
   };
   var PAGE_TEMPLATE = {
     name: "homepage",
@@ -433,12 +533,13 @@ var CustomImportScript = (() => {
     ],
     blocks: [
       { name: "hero-video", instances: ["div.hero-main-content", "#Header-video"] },
+      { name: "banner-patients", instances: ["#hero-banner-patients", "div.award-banner-wrapper"] },
       { name: "carousel-news", instances: ["#News-Media", "#scroller"] },
-      { name: "columns-stats", instances: ["#who-we-are"] },
-      { name: "columns-cta", instances: ["div.wrapper-cta-banner"] },
-      { name: "columns-impact", instances: ["#Our-Impact .our-impact-card", "#Our-Impact .access-card"] },
+      { name: "stats-band", instances: ["#who-we-are"] },
+      { name: "cta-band", instances: ["div.wrapper-cta-banner"] },
+      { name: "impact-band", instances: ["#Our-Impact .our-impact-card", "#Our-Impact .access-card"] },
       { name: "cards-stats", instances: ["#Our-Impact .div2", "#Our-Impact .div3", "#Our-Impact .div4"] },
-      { name: "columns-promo", instances: ["#Careers", "div.wrapper-careers-section", "#ShareHolder", "div.wrapper-investors-section"] }
+      { name: "promo-band", instances: ["#Careers", "div.wrapper-careers-section", "#ShareHolder", "div.wrapper-investors-section"] }
     ]
   };
   var transformers = [

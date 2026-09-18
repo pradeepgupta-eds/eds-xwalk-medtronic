@@ -3,12 +3,13 @@
 
 // PARSER IMPORTS
 import heroVideoParser from './parsers/hero-video.js';
+import bannerPatientsParser from './parsers/banner-patients.js';
 import carouselNewsParser from './parsers/carousel-news.js';
-import columnsStatsParser from './parsers/columns-stats.js';
-import columnsCtaParser from './parsers/columns-cta.js';
-import columnsImpactParser from './parsers/columns-impact.js';
+import statsBandParser from './parsers/stats-band.js';
+import ctaBandParser from './parsers/cta-band.js';
+import impactBandParser from './parsers/impact-band.js';
 import cardsStatsParser from './parsers/cards-stats.js';
-import columnsPromoParser from './parsers/columns-promo.js';
+import promoBandParser from './parsers/promo-band.js';
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/medtronic-cleanup.js';
@@ -17,12 +18,13 @@ import sectionsTransformer from './transformers/medtronic-sections.js';
 // PARSER REGISTRY
 const parsers = {
   'hero-video': heroVideoParser,
+  'banner-patients': bannerPatientsParser,
   'carousel-news': carouselNewsParser,
-  'columns-stats': columnsStatsParser,
-  'columns-cta': columnsCtaParser,
-  'columns-impact': columnsImpactParser,
+  'stats-band': statsBandParser,
+  'cta-band': ctaBandParser,
+  'impact-band': impactBandParser,
   'cards-stats': cardsStatsParser,
-  'columns-promo': columnsPromoParser,
+  'promo-band': promoBandParser,
 };
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
@@ -43,12 +45,13 @@ const PAGE_TEMPLATE = {
   ],
   blocks: [
     { name: 'hero-video', instances: ['div.hero-main-content', '#Header-video'] },
+    { name: 'banner-patients', instances: ['#hero-banner-patients', 'div.award-banner-wrapper'] },
     { name: 'carousel-news', instances: ['#News-Media', '#scroller'] },
-    { name: 'columns-stats', instances: ['#who-we-are'] },
-    { name: 'columns-cta', instances: ['div.wrapper-cta-banner'] },
-    { name: 'columns-impact', instances: ['#Our-Impact .our-impact-card', '#Our-Impact .access-card'] },
+    { name: 'stats-band', instances: ['#who-we-are'] },
+    { name: 'cta-band', instances: ['div.wrapper-cta-banner'] },
+    { name: 'impact-band', instances: ['#Our-Impact .our-impact-card', '#Our-Impact .access-card'] },
     { name: 'cards-stats', instances: ['#Our-Impact .div2', '#Our-Impact .div3', '#Our-Impact .div4'] },
-    { name: 'columns-promo', instances: ['#Careers', 'div.wrapper-careers-section', '#ShareHolder', 'div.wrapper-investors-section'] },
+    { name: 'promo-band', instances: ['#Careers', 'div.wrapper-careers-section', '#ShareHolder', 'div.wrapper-investors-section'] },
   ],
 };
 
