@@ -159,7 +159,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/parsers/columns-stats.js
+  // tools/importer/parsers/stats-band.js
   function parse3(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
@@ -198,14 +198,14 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [
-      ["Columns Stats"],
+      ["Stats Band"],
       [leftCell, rightCell]
     ];
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-stats", cells });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "stats-band", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-cta.js
+  // tools/importer/parsers/cta-band.js
   function parse4(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
@@ -225,14 +225,14 @@ var CustomImportScript = (() => {
       return;
     }
     const cells = [
-      ["Columns Cta"],
+      ["Cta Band"],
       [contentCell, ctaCell]
     ];
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-cta", cells });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "cta-band", cells });
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-impact.js
+  // tools/importer/parsers/impact-band.js
   function parse5(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
@@ -250,13 +250,13 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const cells = [["Columns Impact"]];
+    const cells = [["Impact Band"]];
     if (img) {
       cells.push([[img.cloneNode(true)], textCell]);
     } else {
       cells.push([textCell, [""]]);
     }
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-impact", cells });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "impact-band", cells });
     element.replaceWith(block);
   }
 
@@ -294,7 +294,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-promo.js
+  // tools/importer/parsers/promo-band.js
   function parse7(element, { document: document2 }) {
     element.querySelectorAll("style, script, noscript").forEach((n) => n.remove());
     element.querySelectorAll('img[src^="data:"]').forEach((i) => i.remove());
@@ -344,13 +344,13 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const cells = [["Columns Promo"]];
+    const cells = [["Promo Band"]];
     if (img) {
       cells.push([[img.cloneNode(true)], textCell]);
     } else {
       cells.push([textCell, [""]]);
     }
-    const block = WebImporter.Blocks.createBlock(document2, { name: "columns-promo", cells });
+    const block = WebImporter.Blocks.createBlock(document2, { name: "promo-band", cells });
     element.replaceWith(block);
   }
 
@@ -459,11 +459,11 @@ var CustomImportScript = (() => {
   var parsers = {
     "hero-video": parse,
     "carousel-news": parse2,
-    "columns-stats": parse3,
-    "columns-cta": parse4,
-    "columns-impact": parse5,
+    "stats-band": parse3,
+    "cta-band": parse4,
+    "impact-band": parse5,
     "cards-stats": parse6,
-    "columns-promo": parse7
+    "promo-band": parse7
   };
   var PAGE_TEMPLATE = {
     name: "homepage",
@@ -483,11 +483,11 @@ var CustomImportScript = (() => {
     blocks: [
       { name: "hero-video", instances: ["div.hero-main-content", "#Header-video"] },
       { name: "carousel-news", instances: ["#News-Media", "#scroller"] },
-      { name: "columns-stats", instances: ["#who-we-are"] },
-      { name: "columns-cta", instances: ["div.wrapper-cta-banner"] },
-      { name: "columns-impact", instances: ["#Our-Impact .our-impact-card", "#Our-Impact .access-card"] },
+      { name: "stats-band", instances: ["#who-we-are"] },
+      { name: "cta-band", instances: ["div.wrapper-cta-banner"] },
+      { name: "impact-band", instances: ["#Our-Impact .our-impact-card", "#Our-Impact .access-card"] },
       { name: "cards-stats", instances: ["#Our-Impact .div2", "#Our-Impact .div3", "#Our-Impact .div4"] },
-      { name: "columns-promo", instances: ["#Careers", "div.wrapper-careers-section", "#ShareHolder", "div.wrapper-investors-section"] }
+      { name: "promo-band", instances: ["#Careers", "div.wrapper-careers-section", "#ShareHolder", "div.wrapper-investors-section"] }
     ]
   };
   var transformers = [

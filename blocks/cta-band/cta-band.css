@@ -1,23 +1,23 @@
 /*
- * columns-cta — dark full-width call-to-action banner.
- * Values extracted from source div.wrapper-cta-banner (see migration-work/columns-cta-extracted.css).
+ * cta-band — dark full-width call-to-action banner.
+ * Values extracted from source div.wrapper-cta-banner (see migration-work/cta-band-extracted.css).
  * The enclosing .section.dark supplies the dark background (#00001c) and white text.
  */
 
 /* Mobile-first: stack text then action. */
-.columns-cta.block > .columns-cta-row {
+.cta-band.block > .cta-band-row {
   display: flex;
   flex-direction: column;
   gap: 24px;
   align-items: flex-start;
 }
 
-.columns-cta.block .columns-cta-text {
+.cta-band.block .cta-band-text {
   min-width: 0;
 }
 
 /* Eyebrow: first paragraph of the text cell. */
-.columns-cta.block .columns-cta-eyebrow {
+.cta-band.block .cta-band-eyebrow {
   margin: 0;
   color: rgb(255 255 255 / 70%);
   font-size: 12px;
@@ -28,7 +28,7 @@
 }
 
 /* Underline beneath the eyebrow. */
-.columns-cta.block .columns-cta-eyebrow::after {
+.cta-band.block .cta-band-eyebrow::after {
   content: "";
   display: block;
   width: 170px;
@@ -38,7 +38,7 @@
 }
 
 /* Headline: authored as a plain paragraph in the source, styled like a heading. */
-.columns-cta.block .columns-cta-headline {
+.cta-band.block .cta-band-headline {
   margin: 32px 0 0;
   color: #fff;
   font-size: 32px;
@@ -47,7 +47,7 @@
 }
 
 /* Copy paragraph. */
-.columns-cta.block .columns-cta-copy {
+.cta-band.block .cta-band-copy {
   margin: 8px 0 0;
   color: #fff;
   font-size: 20px;
@@ -56,18 +56,18 @@
 }
 
 /* Action cell hugs its content. */
-.columns-cta.block .columns-cta-action {
+.cta-band.block .cta-band-action {
   margin: 0;
 }
 
-.columns-cta.block .columns-cta-action p {
+.cta-band.block .cta-band-action p {
   margin: 0;
 }
 
 /* "Find out" CTA — override the global plain-link reset with the
    Medtronic blue arrowed-link treatment. */
-main .columns-cta.block .columns-cta-action a:any-link,
-main .columns-cta.block .columns-cta-action a.button:any-link {
+main .cta-band.block .cta-band-action a:any-link,
+main .cta-band.block .cta-band-action a.button:any-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -78,13 +78,13 @@ main .columns-cta.block .columns-cta-action a.button:any-link {
   text-decoration: none;
 }
 
-main .columns-cta.block .columns-cta-action a:any-link:hover {
+main .cta-band.block .cta-band-action a:any-link:hover {
   color: rgb(74 125 255);
   text-decoration: none;
 }
 
 /* Circular blue arrow icon after the link label. */
-.columns-cta.block .columns-cta-action a:any-link::after {
+.cta-band.block .cta-band-action a:any-link::after {
   content: "";
   display: inline-block;
   flex: 0 0 auto;
@@ -100,18 +100,18 @@ main .columns-cta.block .columns-cta-action a:any-link:hover {
 
 /* Desktop: text left, action right, vertically centred. */
 @media (width >= 900px) {
-  .columns-cta.block > .columns-cta-row {
+  .cta-band.block > .cta-band-row {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 48px;
   }
 
-  .columns-cta.block .columns-cta-text {
+  .cta-band.block .cta-band-text {
     flex: 1 1 auto;
   }
 
-  .columns-cta.block .columns-cta-action {
+  .cta-band.block .cta-band-action {
     flex: 0 0 auto;
   }
 }

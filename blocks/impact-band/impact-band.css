@@ -1,28 +1,28 @@
-/* columns-impact — Medtronic "Our Impact" promo panels.
+/* impact-band — Medtronic "Our Impact" promo panels.
    Two instances share this block:
    1) blue gradient statement panel (no image column)
-   2) deep-navy impact-report card with photo (has .columns-impact-img-col)
+   2) deep-navy impact-report card with photo (has .impact-band-img-col)
    Values extracted from source .our-impact-card and .access-card. */
 
-.columns-impact > div {
+.impact-band > div {
   display: flex;
   flex-direction: column;
 }
 
-.columns-impact img {
+.impact-band img {
   display: block;
   width: 100%;
 }
 
 /* ---- shared text content ---- */
-.columns-impact .columns-impact-content {
+.impact-band .impact-band-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
 }
 
-.columns-impact-eyebrow {
+.impact-band-eyebrow {
   position: relative;
   margin: 0 0 20px;
   padding-bottom: 20px;
@@ -34,7 +34,7 @@
   text-transform: uppercase;
 }
 
-.columns-impact-eyebrow::after {
+.impact-band-eyebrow::after {
   content: "";
   position: absolute;
   left: 0;
@@ -44,24 +44,24 @@
   background: rgb(255 255 255 / 35%);
 }
 
-.columns-impact-headline {
+.impact-band-headline {
   margin: 0;
   color: #fff;
   font-weight: 700;
   line-height: 1.1;
 }
 
-.columns-impact-copy {
+.impact-band-copy {
   margin: 16px 0 0;
   color: #fff;
 }
 
-.columns-impact-cta {
+.impact-band-cta {
   margin: 28px 0 0;
 }
 
-.columns-impact-cta a,
-.columns-impact-cta a.button:any-link {
+.impact-band-cta a,
+.impact-band-cta a.button:any-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -78,7 +78,7 @@
 }
 
 /* circular arrow badge (matches source .arrow-icon svg) */
-.columns-impact-cta a::after {
+.impact-band-cta a::after {
   content: "";
   flex: 0 0 auto;
   width: 26px;
@@ -91,93 +91,93 @@
    The visible card region is a blue gradient: deep royal/indigo blue on the left
    lightening to azure toward the right. Colors sampled from the source image
    (top-left rgb(9,36,236) -> mid rgb(0,68,240) -> right rgb(0,102,247)). */
-.columns-impact:not(:has(.columns-impact-img-col)) > div {
+.impact-band:not(:has(.impact-band-img-col)) > div {
   padding: 40px 28px;
   background-color: rgb(9 36 236);
   background-image: linear-gradient(105deg, rgb(9 36 236) 0%, rgb(0 68 240) 50%, rgb(0 102 247) 100%);
 }
 
 /* Navy impact-report card base (kept beside the magenta base for cascade order) */
-.columns-impact:has(.columns-impact-img-col) > div {
+.impact-band:has(.impact-band-img-col) > div {
   overflow: hidden;
   background: var(--brand-navy); /* rgb(23 15 95) */
 }
 
 /* the authored empty second cell */
-.columns-impact > div > div:empty {
+.impact-band > div > div:empty {
   display: none;
 }
 
-.columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-content {
+.impact-band:not(:has(.impact-band-img-col)) .impact-band-content {
   flex: 1;
 }
 
-.columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-headline {
+.impact-band:not(:has(.impact-band-img-col)) .impact-band-headline {
   margin: 32px 0;
   font-size: var(--heading-font-size-xxl); /* 40px mobile / 52px desktop */
 }
 
-.columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-copy {
+.impact-band:not(:has(.impact-band-img-col)) .impact-band-copy {
   font-size: 20px;
   line-height: 32px;
 }
 
 /* ================= Navy impact-report card (has image column) ================= */
-.columns-impact:has(.columns-impact-img-col) .columns-impact-img-col {
+.impact-band:has(.impact-band-img-col) .impact-band-img-col {
   padding: 0;
 }
 
-.columns-impact:has(.columns-impact-img-col) .columns-impact-content {
+.impact-band:has(.impact-band-img-col) .impact-band-content {
   padding: 24px 30px 36px;
 }
 
-.columns-impact:has(.columns-impact-img-col) .columns-impact-headline {
+.impact-band:has(.impact-band-img-col) .impact-band-headline {
   font-size: 32px;
   line-height: 1.3;
 }
 
-.columns-impact:has(.columns-impact-img-col) .columns-impact-copy {
+.impact-band:has(.impact-band-img-col) .impact-band-copy {
   font-size: 16px;
   line-height: 1.6;
 }
 
-.columns-impact:has(.columns-impact-img-col) .columns-impact-cta a,
-.columns-impact:has(.columns-impact-img-col) .columns-impact-cta a.button:any-link {
+.impact-band:has(.impact-band-img-col) .impact-band-cta a,
+.impact-band:has(.impact-band-img-col) .impact-band-cta a.button:any-link {
   color: #4a7dff;
 }
 
 /* ================= Desktop ================= */
 @media (width >= 900px) {
-  .columns-impact:not(:has(.columns-impact-img-col)) > div {
+  .impact-band:not(:has(.impact-band-img-col)) > div {
     min-height: 498px;
     padding: 53px 78px;
     justify-content: space-between;
   }
 
-  .columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-cta {
+  .impact-band:not(:has(.impact-band-img-col)) .impact-band-cta {
     margin-top: auto;
   }
 
-  .columns-impact:not(:has(.columns-impact-img-col)) .columns-impact-copy {
+  .impact-band:not(:has(.impact-band-img-col)) .impact-band-copy {
     max-width: 525px;
   }
 
   /* report card becomes a horizontal photo + navy panel */
-  .columns-impact:has(.columns-impact-img-col) > div {
+  .impact-band:has(.impact-band-img-col) > div {
     flex-direction: row;
     align-items: stretch;
   }
 
-  .columns-impact:has(.columns-impact-img-col) .columns-impact-img-col {
+  .impact-band:has(.impact-band-img-col) .impact-band-img-col {
     flex: 0 0 42%;
   }
 
-  .columns-impact:has(.columns-impact-img-col) .columns-impact-img-col img {
+  .impact-band:has(.impact-band-img-col) .impact-band-img-col img {
     height: 100%;
     object-fit: cover;
   }
 
-  .columns-impact:has(.columns-impact-img-col) .columns-impact-content {
+  .impact-band:has(.impact-band-img-col) .impact-band-content {
     flex: 1;
     padding: 48px 48px 48px 44px;
     justify-content: center;
