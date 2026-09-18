@@ -4,12 +4,19 @@
  * (section fallback background rgb(230, 241, 255)). With no video source in the authored
  * content, the full-bleed look is approximated here with a layered ocean/sky gradient. */
 
-/* ---- Full-width background band (source: ocean/sky video behind the card) ---- */
+/* ---- Full-width background band (source: ocean/sky video behind the card) ----
+ * Layer order (bottom → top): gradient fallback color → background image
+ * fallback (shown until/if the video plays or when it can't) → <video> element
+ * (.hero-video-bg) added by hero-video.js → white card. */
 .hero-video-container .hero-video-wrapper {
+  position: relative;
+  overflow: hidden;
   max-width: none;
   margin: 0;
   padding: 56px 24px;
-  background:
+  background-color: #3d5876;
+  background-image:
+    url('https://www.medtronic.com/content/dam/medtronic-wide/public/channel-configuration/adobe-target/corporate/images/hp-hero-ras-bckgrnd-cnpt.png'),
     linear-gradient(180deg,
       #cdddf0 0%,
       #d8e2ec 26%,
@@ -17,10 +24,26 @@
       #9fb8cf 62%,
       #5f7f9e 80%,
       #3d5876 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: cover, cover;
+}
+
+/* Looping background video sits full-bleed behind the card. */
+.hero-video-container .hero-video-wrapper .hero-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* ---- White card ---- */
 .hero-video {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   max-width: 1087px;
   margin: 0 auto;
