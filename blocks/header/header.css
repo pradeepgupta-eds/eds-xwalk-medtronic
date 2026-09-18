@@ -188,6 +188,15 @@ header nav .nav-search-select-wrap {
   border-right: 1px solid #e0e0e0;
 }
 
+/* Mobile (< live 768px breakpoint): the "Search within" audience dropdown is a
+   desktop-only element on the live site — hide it so the search input takes the
+   full row width and the "Search Medtronic" placeholder shows in full. */
+@media (width < 768px) {
+  header nav .nav-search-select-wrap {
+    display: none;
+  }
+}
+
 header nav .nav-search-select {
   height: 100%;
   border: 0;
@@ -315,10 +324,12 @@ header nav .nav-tools-region-item a::before {
 
 /* ---- Desktop layout: two rows (search+tools top, nav links bottom) ---- */
 @media (width >= 900px) {
-  /* Desktop: dark navy→blue gradient bar with white content. */
+  /* Desktop: dark navy/near-black → blue gradient bar with white content.
+     Mirrors the live header, whose dark overlay (rgba(0,0,0,.83)→transparent)
+     over the blue hero reads as near-black on the left easing to blue. */
   header .nav-wrapper {
     background:
-      linear-gradient(90deg, #0a1244 0%, #101a5c 38%, #1c3f8f 72%, #3f74c4 100%);
+      linear-gradient(90deg, #05070f 0%, #0b1030 30%, #17307a 68%, #2f66bd 100%);
     border-bottom: 1px solid rgb(255 255 255 / 8%);
   }
 
@@ -361,11 +372,25 @@ header nav .nav-tools-region-item a::before {
   }
 
   header nav .nav-search-form {
-    width: 420px;
+    width: 100%;
+    max-width: 620px;
   }
 
   header nav .nav-tools ul {
     justify-content: flex-end;
+    gap: 28px;
+    font-size: 16px;
+  }
+
+  /* Region selector text: live is 16px / weight 400 */
+  header nav .nav-tools-region-item a {
+    font-weight: 400;
+  }
+
+  /* Academy icon sized to live 22px */
+  header nav .nav-tools-academy-item a::before {
+    width: 24px;
+    height: 24px;
   }
 
   header nav .nav-sections {
@@ -381,9 +406,10 @@ header nav .nav-tools-region-item a::before {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 36px;
+    gap: 48px;
     margin: 0;
     align-items: center;
+    font-size: 16px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
